@@ -19,12 +19,15 @@ const IndexPage: React.FC = () => {
       <Helmet>
         <html lang="ja" />
       </Helmet>
-      <LotusMenu />
+      {/* <LotusMenu />
       <Header />
       <About />
       <Exam />
       <News />
-      <Footer />
+      <Footer /> */}
+      <p>
+        coming soon...
+      </p>
     </>
   )
 }

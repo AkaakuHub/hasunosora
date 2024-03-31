@@ -1,5 +1,9 @@
 import type { GatsbyConfig } from "gatsby";
 
+require("dotenv").config({
+  path: `.env.${process.env.NODE_ENV}`,
+});
+
 const config: GatsbyConfig = {
   siteMetadata: {
     title: `hasunosora`,
@@ -23,7 +27,8 @@ const config: GatsbyConfig = {
         path: `${__dirname}/src/images`,
       },
       __key: "images"
-    }, {
+    },
+    {
       resolve: "gatsby-plugin-google-gtag",
       options: {
         trackingIds: [

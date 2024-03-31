@@ -1,4 +1,5 @@
 import React from "react";
+import { useState } from "react";
 import { HeadFC } from "gatsby";
 
 import { Helmet } from 'react-helmet';
@@ -10,23 +11,51 @@ import LotusMenu from "../components/(parts)/lotusmenu";
 import About from "../components/(pages)/about";
 import Exam from "../components/(pages)/exam";
 import News from "../components/(pages)/news";
+import Schoollife from "../components/(pages)/schoollife";
 
+import Aprilfool from "../components/(parts)/aprilfool";
+
+import "./index.css";
 import "./global.css";
+import { AprilfoolPropsType } from "../types";
+
+import { createGlobalStyle } from "styled-components";
 
 const IndexPage: React.FC = () => {
+  const [isAMOpen, setIsAMOpen] = useState(false);
+  const AprilfoolProps: AprilfoolPropsType = { isAMOpen, setIsAMOpen };
+
+  const getRandomColor = () => {
+    const colors: string[] = ["#FFBF00", "#1053A6", "#69CD82", "#E7334A", "#F79293", "#A6A6A6"];
+    const randomIndex: number = Math.floor(Math.random() * colors.length);
+    return colors[randomIndex];
+  };
+
+  const GlobalStyles = createGlobalStyle`
+  ::selection {
+    color: #fff;
+    background: ${getRandomColor()};
+  }
+`;
+
   return (
     <>
       <Helmet>
         <html lang="ja" />
       </Helmet>
+      <GlobalStyles />
       {/* <LotusMenu />
+      <Aprilfool {...AprilfoolProps} />
       <Header />
-      <About />
-      <Exam />
-      <News />
+      <div className="main-page">
+        <About />
+        <News {...AprilfoolProps} />
+        <Schoollife />
+        <Exam />
+      </div>
       <Footer /> */}
       <p>
-        coming soon...
+        2024 04/01 ...
       </p>
     </>
   )
@@ -56,6 +85,10 @@ export const Head: HeadFC = () => {
       <meta name="twitter:image:alt" content="蓮ノ空女学院 ウェブサイト" />
       <meta name="twitter:image:width" content="1200" />
       <meta name="twitter:image:height" content="630" />
+
+      <link rel="preconnect" href="https://fonts.googleapis.com" />
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+      <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP&family=Palette+Mosaic&display=swap" rel="stylesheet" />
     </head>
   )
 }

@@ -21,7 +21,7 @@ const LotusMenu: React.FC<LotusMenuProps> = () => {
   }, []);
 
   return (
-    <div className="root">
+    <div className="lotusmenu-root">
       <div className="lotus-menu-launcher" onClick={() => setIsOpen(c => !c)}></div>
       {isOpen && (
         <div className="lotus-menu-wrapper">

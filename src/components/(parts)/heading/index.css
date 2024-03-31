@@ -1,0 +1,51 @@
+.base {
+  margin-bottom: 1em;
+}
+
+.heading-root {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.heading-text {
+  position: relative;
+  width: fit-content;
+  padding-bottom: 0.5em;
+  margin: 0 auto 1em;
+  text-align: center;
+  margin-top: 20px;
+  top: 20px;
+}
+
+.h1 .heading-text {
+  font-size: 1.75em;
+}
+
+.h1 .heading-text::before {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  display: inline-block;
+  width: 100%;
+  height: 1.25em;
+  border-bottom: solid;
+  content: "";
+  transform: translateX(-50%);
+}
+
+.h2 .heading-text {
+  font-size: 1.5em;
+}
+
+.h2 .heading-text::before {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  display: inline-block;
+  width: 100%;
+  height: 1.25em;
+  border-bottom: double;
+  content: "";
+  transform: translateX(-50%);
+}

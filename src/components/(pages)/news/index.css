@@ -1,5 +1,30 @@
-.news-tag{
+.news-card {
+  border: 2px groove #838383;
+  padding-left: 3em;
+  border-radius: 1em;
+  margin: 1em 0 1em 0;
+  cursor: pointer;
+
+  &:hover {
+    filter: brightness(0.9);
+    background-color: aqua;
+  }
+}
+
+.news-tag {
   color: #fff;
   padding: 0.5em;
-  border-radius: 10px;
+  border-radius: 0.5em;
+  width: 6em;
+  display: inline-block;
+  text-align: center;
+  margin-right: 3em;
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+
+.show-more-news{
+  cursor: pointer;
 }

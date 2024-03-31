@@ -2,8 +2,16 @@ import React from "react";
 
 import "./index.css";
 
-const News: React.FC = () => {
+import { Heading } from "../../(parts)/heading";
 
+import { AprilfoolPropsType } from "../../../types";
+
+const News: React.FC<AprilfoolPropsType> = (
+  {
+    isAMOpen,
+    setIsAMOpen,
+  }
+) => {
   type NewsDataType = {
     date: string,
     title: string,
@@ -18,7 +26,7 @@ const News: React.FC = () => {
     },
     {
       "date": "2024/3/28",
-      "title": "蓮華祭が開催されます",
+      "title": "蓮華祭が開催されました",
       "kind": "行事"
     },
     {
@@ -29,15 +37,17 @@ const News: React.FC = () => {
   ]
 
   const colorDictionary = {
-    "重要": "#ff0000",
-    "行事": "#0000ff",
-    "入試": "#00ff00",
-    "その他": "#000000",
+    "重要": "#b51909",
+    "行事": "#3f10ad",
+    "入試": "#3fad10",
+    "その他": "#525252",
   }
 
   const MakeNewsComponent = ({ news }: { news: NewsDataType }) => {
     return (
-      <div>
+      <div className="news-card"
+        onClick={() => setIsAMOpen(true)}
+      >
         <p>
           <span className="news-tag" style={{ backgroundColor: colorDictionary[news.kind] }}>{news.kind}</span>
           <span>{news.date}</span>
@@ -46,12 +56,17 @@ const News: React.FC = () => {
       </div>
     )
   }
+
   return (
     <>
-      <h1>News</h1>
+      <Heading as="h1">News</Heading>
       {newsData.map((news, index) => (
         <MakeNewsComponent key={index} news={news} />
       ))}
+      <p onClick={() => setIsAMOpen(true)} className="show-more-news"
+      >
+        もっと見る
+      </p>
     </>
   )
 }

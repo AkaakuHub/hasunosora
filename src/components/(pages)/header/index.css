@@ -1,6 +1,6 @@
 @charset "UTF-8";
 
-.root{
+.header-root{
   background-color: #fce8e6;
   display: flex;
   align-items: center; /* オプション：要素を垂直方向に中央揃えにします */
@@ -12,6 +12,7 @@
   height: 100px;
 }
 
-.school-name{
-  font-size: 1.2em;
+.school-name-image{
+  width: 227.5px;
+  height: 89px;
 }

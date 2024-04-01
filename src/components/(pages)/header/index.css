@@ -10,9 +10,19 @@
 .logo-image{
   width: 100px;
   height: 100px;
+  margin: 10px;
+}
+
+@media (max-width: 768px) {
+  /* スマホ用 */
+  .logo-image{
+    width: 70px!important;
+    height: 70px!important;
+  }
 }
 
 .school-name-image{
-  width: 227.5px;
-  height: 89px;
+  width: 159.25px!important;
+  height: 62.3px!important;
+  margin: 10px;
 }

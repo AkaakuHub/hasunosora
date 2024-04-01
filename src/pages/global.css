@@ -15,3 +15,25 @@ body{
   -moz-user-select: none;
   -ms-user-select: none;
 }
+.common-card-container{
+  /* flex */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 5em;
+}
+
+.background-root,
+.white-background-root{
+  padding: 1em;
+  border-radius: 0 0 1em 1em;
+}
+
+.background-root{
+  margin: 0 0 12em 0;
+}
+
+.white-background-root{
+  margin: 12em 0 12em 0;
+  background: linear-gradient(0deg, rgba(255,255,255,1) 0%, rgba(255,255,255,0.8) 80%, rgba(255,255,255,0) 100%);
+}

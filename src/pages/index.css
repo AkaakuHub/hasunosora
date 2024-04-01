@@ -1,3 +1,73 @@
 .main-page{
   margin: 1em;
+  width: 90%;
+  max-width: 1000px;
+
+  /* ちゅうおうぞろえ */
+  margin-left: auto;
+  margin-right: auto;
+
+
+}
+
+
+.each-section{
+  min-height: 100vh; /* これにより、各コンポーネントは少なくともビューポートの高さを持つようになります */
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+.background-image-root{
+  position: fixed ;
+}
+
+/* animation1 */
+
+@keyframes fadeIn {
+  0% {opacity: 0;}
+  100% {opacity: 1;}
+}
+
+@keyframes fadeOut {
+  0% {opacity: 1;}
+  100% {opacity: 0;}
+}
+
+.backgroundImageContainer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  z-index: -1;
+}
+
+.backgroundImage {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+
+/* end */
+
+.section-root{
+  position: relative;
+  z-index: 1;
+}
+
+.sachi-wrapper{
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+  z-index: 0;
+}
+
+.sachi-is-shown{
+  opacity: 1;
 }

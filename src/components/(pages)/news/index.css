@@ -6,8 +6,7 @@
   cursor: pointer;
 
   &:hover {
-    filter: brightness(0.9);
-    background-color: aqua;
+    background-color: #c8c8c8;
   }
 }
 
@@ -25,6 +24,26 @@
   -ms-user-select: none;
 }
 
-.show-more-news{
+@media (max-width: 768px) {
+  /* スマホ用 */
+  .news-card{
+    padding-left: 1em;
+  }
+  .news-tag{
+    margin-right: 1em;
+  }
+}
+
+.show-more-wrapper {
+  display: inline-block;
+  justify-content: center;
+  margin-top: 1em;
   cursor: pointer;
+  margin-bottom: 2em;
+}
+
+.news-arrow {
+  position: relative;
+  top: 6px;
+  left: 6px;
 }

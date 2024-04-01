@@ -1,12 +1,30 @@
 import React from "react";
 import { Heading } from "../../(parts)/heading";
 
-const Exam: React.FC = () => {
+import CommonCard from "../../(parts)/commoncard";
+
+import { AprilfoolPropsType } from "../../../types";
+
+const Exam: React.FC<AprilfoolPropsType> = (
+  {
+    isAMOpen,
+    setIsAMOpen,
+    type,
+    setType,
+  }
+) => {
+  const CommonCardProps = {
+    setIsAMOpen: setIsAMOpen,
+    setType: setType,
+  }
   return (
-    <>
+    <div className="white-background-root">
       <Heading as="h1">学校生活</Heading>
-      寮について
-    </>
+      <div className="common-card-container">
+        <CommonCard title="学生寮" body="寮生活についての情報です。" imageURL="/thumbnail/ryouseikatsu.webp" {...CommonCardProps} />
+        <CommonCard title="施設" body="充実した施設を紹介します。" imageURL="/thumbnail/shisetsu.webp" {...CommonCardProps} />
+      </div>
+    </div>
   )
 }
 

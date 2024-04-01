@@ -1,8 +1,14 @@
-import React from "react";
-
+import React, { useState } from "react";
+import CloseIcon from '@mui/icons-material/Close';
 import "./index.css";
 
-const Footer: React.FC = () => {
+const Footer = () => {
+  const [showModal, setShowModal] = useState(false);
+
+  const toggleModal = () => {
+    setShowModal(!showModal);
+  };
+
   return (
     <>
       <p className="footer-root">
@@ -12,12 +18,43 @@ const Footer: React.FC = () => {
         このサイトは4月1日に作られたものであり、公式とは一切関係ありません。
         <br />
         <br />
+        <div className="footer-privacy-policy" onClick={toggleModal}>
+          プライバシーポリシー
+        </div>
+        <br />
+        <br />
         本サイトで使用されている画像の著作権は以下に帰属します。
         <br />
         ©PL!HS ©S ©2023 BNML ©ODD No.
       </p>
+      {showModal && (
+        <div className="footer-modal-container">
+          <div className="footer-modal">
+            <div className="footer-modal-bg" onClick={toggleModal}></div>
+            <div className="footer-modal-content">
+              <div className="footer-modal-close-button" onClick={toggleModal}>
+                <CloseIcon fontSize="large" />
+              </div>
+              <p className="footer-modal-main-text">
+                本サイトでは、ユーザー体験の向上やサイトの最適化のため、Googleアナリティクスを使用しています。
+                <br />
+                Googleアナリティクスでは、Cookieを使用して、個人を特定できない形で匿名データを収集しています。
+                <br />
+                もしデータ収集を拒否したい場合は、お使いのブラウザの設定を変更してください。
+                <br />
+                <br />
+                詳しくは、
+                <a href="https://marketingplatform.google.com/about/analytics/terms/jp/" target="_blank" rel="noreferrer">Googleアナリティクス利用規約</a>
+                や
+                <a href="https://policies.google.com/technologies/ads?hl=ja" target="_blank" rel="noreferrer">Googleのポリシーと規約</a>
+                をご確認ください。
+              </p>
+            </div>
+          </div>
+        </div>
+      )}
     </>
-  )
-}
+  );
+};
 
-export default Footer
+export default Footer;

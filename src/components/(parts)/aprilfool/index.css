@@ -1,4 +1,4 @@
-.root {
+.modal-root {
   z-index: 10000;
   position: fixed;
   top: 0;
@@ -26,18 +26,18 @@
 }
 
 .modal {
-  position: fixed ;
+  position: fixed;
   z-index: 10002;
   width: 80%;
   max-width: 800px;
-  height: 50%;
+  max-height: 80vh; /* モーダルの最大高さを設定 */
   background-color: white;
   border-radius: 1em;
   padding: 1em;
+  overflow: auto; /* モーダル内でスクロールできるようにする */
 }
 
-.modal-close-button{
-  /* modalの右上に固定, ホバーで円上のグレー*/
+.modal-close-button {
   position: absolute;
   top: 1em;
   right: 1em;
@@ -47,14 +47,32 @@
   display: flex;
   cursor: pointer;
   size: 5em;
+}
 
-  &:hover {
-    background-color: #f0f0f0;
+.modal-close-button:hover {
+  background-color: #f0f0f0;
+}
+
+.modal-main-text {
+  margin-top: 2em;
+  text-align: center;
+
+  p{
+    margin: 0.5em;
   }
 }
 
-.modal-main-text{
-  margin-top: 2em;
+.modal-image-container {
+  margin-top: 1em;
+  max-width: 100%; /* 画像のコンテナの最大幅を設定 */
+  max-height: 40vh; /* 画像のコンテナの最大高さを設定 */
+  overflow: hidden; /* はみ出た部分を非表示にする */
+}
+
+.modal-image {
+  max-width: 100%; /* 画像の最大幅を設定 */
+  max-height: 100%; /* 画像の最大高さを設定 */
+  object-fit: contain; /* 画像が歪まないようにする */
 }
 
 .is-shown {
@@ -66,13 +84,13 @@
   opacity: 1;
 }
 
-.is-visible{
+.is-visible {
   display: flex;
 }
 
 .share-button-wrapper {
+  margin-top: 2em;
   text-align: center;
-  display: flex;
   justify-content: center;
   text-decoration: none;
 }
@@ -81,16 +99,19 @@
   text-decoration: none;
   color: #fff;
   text-align: center;
-  width: auto;
-  height: auto;
   display: inline-flex;
   align-items: center;
   padding: 0.3em;
   border-radius: 0.4em;
   line-height: 0;
+  font-size: 1.6em;
 }
-
 
 .icon-wrapper {
   vertical-align: middle;
+}
+
+.sachi-text p::selection{
+  background: #7b8450;
+  color: #fff;
 }

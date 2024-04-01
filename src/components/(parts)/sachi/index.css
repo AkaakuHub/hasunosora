@@ -1,0 +1,15 @@
+.sachi-root {
+  position: fixed; /* 画像を固定位置に配置します */
+  top: 50%; /* 画面の上端から50%の位置に配置します */
+  left: 50%; /* 画面の左端から50%の位置に配置します */
+  transform: translate(-50%, -50%); /* 中央揃えにします */
+  text-align: center; /* テキストを中央揃えにします */
+  overflow: hidden;
+}
+
+.sachi-image {
+  /* 画像のスタイルを指定します */
+  z-index: 0;
+  position: relative;
+}
+

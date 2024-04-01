@@ -6,10 +6,14 @@ import { Heading } from "../../(parts)/heading";
 
 import { AprilfoolPropsType } from "../../../types";
 
+import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
+
 const News: React.FC<AprilfoolPropsType> = (
   {
     isAMOpen,
     setIsAMOpen,
+    type,
+    setType,
   }
 ) => {
   type NewsDataType = {
@@ -21,7 +25,7 @@ const News: React.FC<AprilfoolPropsType> = (
   const newsData: NewsDataType[] = [
     {
       "date": "2024/3/28",
-      "title": "第二音楽堂の名称が決定されました",
+      "title": "第二音楽堂の名称が決まりました",
       "kind": "重要"
     },
     {
@@ -32,7 +36,7 @@ const News: React.FC<AprilfoolPropsType> = (
     {
       "date": "2024/3/12",
       "title": "仮囲い撤去に伴う通行規制のお知らせ",
-      "kind": "重要"
+      "kind": "その他"
     },
   ]
 
@@ -46,7 +50,10 @@ const News: React.FC<AprilfoolPropsType> = (
   const MakeNewsComponent = ({ news }: { news: NewsDataType }) => {
     return (
       <div className="news-card"
-        onClick={() => setIsAMOpen(true)}
+        onClick={() => {
+          setIsAMOpen(true)
+          setType("normal")
+        }}
       >
         <p>
           <span className="news-tag" style={{ backgroundColor: colorDictionary[news.kind] }}>{news.kind}</span>
@@ -58,16 +65,18 @@ const News: React.FC<AprilfoolPropsType> = (
   }
 
   return (
-    <>
-      <Heading as="h1">News</Heading>
+    <div className="white-background-root">
+      <Heading as="h1">お知らせ</Heading>
       {newsData.map((news, index) => (
         <MakeNewsComponent key={index} news={news} />
       ))}
-      <p onClick={() => setIsAMOpen(true)} className="show-more-news"
-      >
-        もっと見る
-      </p>
-    </>
+      <div className="show-more-wrapper" onClick={() => setIsAMOpen(true)}>
+        <span>もっと見る</span>
+        <span className="news-arrow">
+          <ArrowForwardIcon />
+        </span>
+      </div>
+    </div>
   )
 }
 

@@ -71,17 +71,20 @@ const BackgroundImageComponent: React.FC<{ setIsLastImage: React.Dispatch<React.
       const documentHeight = document.documentElement.scrollHeight - windowHeight;
       const scrollPercentage = scrollPosition / documentHeight;
 
-      const newIndex = Math.floor(scrollPercentage * backgroundImages.length);
+      let newIndex = Math.floor(scrollPercentage * backgroundImages.length);
+      // newIndex = Math.max(0, newIndex); // newIndexが0未満にならないようにする
+      if (newIndex === -1) {
+        newIndex = 0;
+      }
       setActiveImageIndex(newIndex);
 
-      // 3のときはisLastImageをtrueにする
-      // setIsLastImage(newIndex === 3);
+      // 3, 4のときはisLastImageをtrueにする
       if (newIndex >= 3) {
         setIsLastImage(true);
       } else {
         setIsLastImage(false);
       }
-      // console.log(newIndex);
+      console.log(newIndex);
     };
 
     window.addEventListener('scroll', handleScroll);

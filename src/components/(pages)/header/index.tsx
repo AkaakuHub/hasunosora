@@ -1,5 +1,4 @@
 import React from "react";
-import { StaticImage } from "gatsby-plugin-image"
 
 import "./index.css";
 
@@ -7,7 +6,7 @@ const Header: React.FC = () => {
   return (
     <>
       <div className="header-root">
-        <StaticImage src="../../../images/icon.webp"
+        <img src="../../../images/icon.webp"
           alt="蓮ノ空女学院の校章"
           layout="fixed"
           placeholder="blurred"
@@ -15,7 +14,7 @@ const Header: React.FC = () => {
           height={100}
           className="logo-image no-click"
         />
-        <StaticImage src="../../../images/school-name.webp"
+        <img src="../../../images/school-name.webp"
           alt="蓮ノ空女学院"
           layout="fixed"
           placeholder="blurred"

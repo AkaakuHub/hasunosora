@@ -1,5 +1,4 @@
 import type { PropsWithChildren } from "react";
-import { StaticImage } from "gatsby-plugin-image"
 
 import "./index.css";
 

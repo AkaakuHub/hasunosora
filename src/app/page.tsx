@@ -19,34 +19,9 @@ import Sachi from "../components/(parts)/sachi";
 import type { AprilfoolTypeType } from "../types/types";
 
 import { createGlobalStyle } from "styled-components";
-import styled from "styled-components";
 
 import "./global.css";
 import "./page.css";
-
-const BackgroundImageWrapper = styled.div`
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: -1;
-`;
-
-const BackgroundImage = styled.img`
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  opacity: 0;
-  transition: opacity 0.5s ease-in-out;
-
-  &.fade-in {
-    opacity: 1;
-  }
-`;
 
 const backgroundImages = [
 	"/background/1.webp",
@@ -87,22 +62,22 @@ const BackgroundImageComponent: React.FC<{
 	}, [setIsLastImage]);
 
 	return (
-		<BackgroundImageWrapper>
+		<div className="fixed top-0 left-0 w-full h-full -z-10">
 			{backgroundImages.map((imgURL, index) => {
 				if (imgURL === "") {
 					return null;
 				}
 				return (
-					<BackgroundImage
+					<img
 						key={imgURL}
 						src={imgURL}
-						className={clsx({ "fade-in": index === activeImageIndex })}
+						className={`absolute top-0 left-0 w-full h-full object-cover opacity-0 transition-opacity duration-500 ease-in-out ${index === activeImageIndex ? 'opacity-100' : ''}`}
 						style={{ zIndex: index === activeImageIndex ? 1 : 0 }}
 						alt="background"
 					/>
 				);
 			})}
-		</BackgroundImageWrapper>
+		</div>
 	);
 };
 

@@ -1,12 +1,12 @@
 "use client";
 
 import type React from "react";
-import { useState, useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 
 import clsx from "clsx";
 
-import Header from "../components/(pages)/header";
 import Footer from "../components/(pages)/footer";
+import Header from "../components/(pages)/header";
 
 import About from "../components/(pages)/about";
 import Exam from "../components/(pages)/exam";

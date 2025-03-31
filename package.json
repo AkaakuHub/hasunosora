@@ -4,9 +4,6 @@
 	"private": true,
 	"description": "hasunosora",
 	"author": "Akua66",
-	"keywords": [
-		"gatsby"
-	],
 	"scripts": {
 		"dev": "next dev",
 		"build": "next build",

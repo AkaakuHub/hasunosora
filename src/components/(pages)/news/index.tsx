@@ -1,12 +1,7 @@
-import type React from "react";
-
-import "./index.css";
-
-import { Heading } from "../../(parts)/heading";
-
-import type { AprilfoolPropsType } from "../../../types/types";
-
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
+import type React from "react";
+import { Heading } from "../../(parts)/heading";
+import type { AprilfoolPropsType } from "../../../types/types";
 
 const News: React.FC<AprilfoolPropsType> = ({ setIsAMOpen, setType }) => {
 	type NewsDataType = {
@@ -44,7 +39,7 @@ const News: React.FC<AprilfoolPropsType> = ({ setIsAMOpen, setType }) => {
 		return (
 			<button
 				type="button"
-				className="news-card"
+				className="border-2 border-groove border-[#838383] pl-12 md:pl-4 rounded-[1em] my-4 cursor-pointer hover:bg-[#c8c8c8] w-full text-left transition-colors"
 				onClick={() => {
 					setIsAMOpen(true);
 					setType("normal");
@@ -52,7 +47,7 @@ const News: React.FC<AprilfoolPropsType> = ({ setIsAMOpen, setType }) => {
 			>
 				<p>
 					<span
-						className="news-tag"
+						className="text-white p-2 rounded-[0.5em] w-[6em] inline-block text-center mr-12 md:mr-4 select-none"
 						style={{ backgroundColor: colorDictionary[news.kind] }}
 					>
 						{news.kind}
@@ -65,18 +60,18 @@ const News: React.FC<AprilfoolPropsType> = ({ setIsAMOpen, setType }) => {
 	};
 
 	return (
-		<div className="white-background-root">
+		<div className="p-4 rounded-b-lg my-48 bg-gradient-to-t from-white via-white/80 to-transparent">
 			<Heading as="h1">お知らせ</Heading>
 			{newsData.map((news) => (
 				<MakeNewsComponent key={news.title} news={news} />
 			))}
 			<button
 				type="button"
-				className="show-more-wrapper"
+				className="inline-block justify-center mt-4 cursor-pointer mb-8 hover:underline"
 				onClick={() => setIsAMOpen(true)}
 			>
 				<span>もっと見る</span>
-				<span className="news-arrow">
+				<span className="relative top-[6px] left-[6px]">
 					<ArrowForwardIcon />
 				</span>
 			</button>

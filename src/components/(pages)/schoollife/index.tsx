@@ -1,8 +1,6 @@
 import type React from "react";
 import { Heading } from "../../(parts)/heading";
-
 import CommonCard from "../../(parts)/commoncard";
-
 import type { AprilfoolPropsType } from "../../../types/types";
 
 const Exam: React.FC<AprilfoolPropsType> = ({ setIsAMOpen, setType }) => {
@@ -11,9 +9,9 @@ const Exam: React.FC<AprilfoolPropsType> = ({ setIsAMOpen, setType }) => {
 		setType: setType,
 	};
 	return (
-		<div className="white-background-root">
+		<div className="p-4 rounded-b-lg my-48 bg-gradient-to-t from-white via-white/80 to-transparent">
 			<Heading as="h1">学校生活</Heading>
-			<div className="common-card-container">
+			<div className="flex flex-wrap gap-4 justify-center">
 				<CommonCard
 					title="学生寮"
 					body="寮生活についての情報です。"

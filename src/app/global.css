@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@config "../../tailwind.config.mjs";
 
 @theme {
 	--color-school-pink: #fce8e6;

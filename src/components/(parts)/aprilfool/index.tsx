@@ -13,22 +13,11 @@ const Aprilfool: React.FC<AprilfoolPropsType> = ({
 	type,
 }) => {
 	const menuRef = useRef<HTMLDivElement>(null);
-	const [isVisible, setIsVisible] = useState(false);
-
 	const handleClickOutside = (event: MouseEvent) => {
 		if (menuRef.current && !menuRef.current.contains(event.target as Node)) {
 			setIsAMOpen(false);
 		}
 	};
-
-	useEffect(() => {
-		if (isAMOpen) {
-			setIsVisible(true);
-		} else {
-			const timeoutId = setTimeout(() => setIsVisible(false), 500); // 0.5秒後に非表示にする
-			return () => clearTimeout(timeoutId);
-		}
-	}, [isAMOpen]);
 
 	// biome-ignore lint/correctness/useExhaustiveDependencies: <explanation>
 	useEffect(() => {
@@ -91,27 +80,33 @@ const Aprilfool: React.FC<AprilfoolPropsType> = ({
 
 	return (
 		<div
-			className={`fixed top-0 left-0 w-full h-full flex justify-center items-center opacity-0 transition-opacity duration-500 pointer-events-none z-[10000] ${
-				isAMOpen ? "opacity-100 pointer-events-auto" : ""
-			} ${isVisible ? "flex" : ""}`}
+			className={`fixed inset-0 flex items-center justify-center z-[10000] transition-all duration-300 ${
+				isAMOpen
+					? "opacity-100 pointer-events-auto"
+					: "opacity-0 pointer-events-none"
+			}`}
 		>
 			<div
-				className="z-[10001] w-full h-full bg-gray-600 absolute top-0 left-0 opacity-0 transition-opacity duration-500 
-      ${isAMOpen ? 'opacity-100' : ''}"
+				className={`absolute inset-0 bg-black/40 transition-opacity duration-300 ${
+					isAMOpen ? "opacity-100" : "opacity-0"
+				}`}
 			/>
+
 			<div
-				className="fixed z-[10002] w-4/5 max-w-[800px] max-h-[80vh] bg-white rounded-lg p-4 overflow-auto"
+				className={`relative w-4/5 max-w-[800px] max-h-[80vh] bg-white rounded-lg p-8 overflow-auto shadow-lg transition-transform duration-300 ${
+					isAMOpen ? "scale-100" : "scale-95"
+				}`}
 				ref={menuRef}
 			>
 				<button
 					type="button"
-					className="absolute top-4 right-4 w-9 h-9 rounded-full flex cursor-pointer hover:bg-gray-100"
+					className="absolute top-4 right-4 w-9 h-9 rounded-full flex items-center justify-center cursor-pointer hover:bg-gray-100"
 					onClick={() => setIsAMOpen(false)}
 				>
 					<CloseIcon fontSize="large" />
 				</button>
 				<div
-					className={`mt-8 text-center ${type === "sachi" ? "sachi-text" : ""}`}
+					className={`mt-8 text-center ${type === "sachi" ? "whitespace-pre-line text-left" : ""}`}
 				>
 					{message1}
 					<br />
@@ -119,7 +114,7 @@ const Aprilfool: React.FC<AprilfoolPropsType> = ({
 						<img
 							src={modalImageURL}
 							alt={`${type}の画像`}
-							className="max-w-full max-h-full object-contain no-click"
+							className="max-w-full max-h-full object-contain pointer-events-none select-none"
 						/>
 					</div>
 					<br />
@@ -129,7 +124,8 @@ const Aprilfool: React.FC<AprilfoolPropsType> = ({
 						rel="noreferrer"
 						className="mt-8 text-center justify-center no-underline inline-block"
 					>
-						<span
+						<button
+							type="button"
 							className="no-underline text-white text-center inline-flex items-center p-1.5 rounded-md leading-none text-2xl"
 							style={{
 								backgroundColor: isHovering ? "#1DA1F2" : "#000",
@@ -141,7 +137,7 @@ const Aprilfool: React.FC<AprilfoolPropsType> = ({
 								{isHovering ? <TwitterIcon /> : <XIcon />}
 							</span>
 							でシェア
-						</span>
+						</button>
 					</a>
 				</div>
 			</div>

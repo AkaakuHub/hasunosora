@@ -1,50 +1,53 @@
 {
-  "name": "hasunosora",
-  "version": "1.0.0",
-  "private": true,
-  "description": "hasunosora",
-  "author": "Akua66",
-  "keywords": [
-    "gatsby"
-  ],
-  "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "format": "prettier --write .",
-    "lint": "eslint ."
-  },
-  "dependencies": {
-    "@emotion/react": "^11.14.0",
-    "@emotion/styled": "^11.14.0",
-    "@mui/icons-material": "^5.17.1",
-    "clsx": "^2.1.1",
-    "gatsby": "^5.14.1",
-    "gatsby-image": "^3.11.0",
-    "gatsby-plugin-google-gtag": "^5.14.0",
-    "gatsby-plugin-image": "^3.14.0",
-    "gatsby-plugin-manifest": "^5.14.0",
-    "gatsby-plugin-sharp": "^5.14.0",
-    "gatsby-plugin-sitemap": "^6.14.0",
-    "gatsby-source-filesystem": "^5.14.0",
-    "gatsby-transformer-sharp": "^5.14.0",
-    "next": "^15.2.4",
-    "react": "^19.1.0",
-    "react-dom": "^19.1.0",
-    "react-helmet": "^6.1.0",
-    "react-image-mapper": "^0.0.15",
-    "styled-components": "^6.1.16"
-  },
-  "devDependencies": {
-    "@eslint/js": "^9.23.0",
-    "@types/node": "^20.17.28",
-    "@types/react": "^18.3.20",
-    "@types/react-dom": "^18.3.5",
-    "@types/react-helmet": "^6.1.11",
-    "eslint": "^9.23.0",
-    "eslint-plugin-react": "^7.37.4",
-    "globals": "^16.0.0",
-    "typescript": "^5.8.2",
-    "typescript-eslint": "^8.28.0"
-  }
+	"name": "hasunosora",
+	"version": "1.0.0",
+	"private": true,
+	"description": "hasunosora",
+	"author": "Akua66",
+	"keywords": [
+		"gatsby"
+	],
+	"scripts": {
+		"dev": "next dev",
+		"build": "next build",
+		"start": "next start",
+		"format": "prettier --write .",
+		"lint": "pnpm biome format --write src"
+	},
+	"dependencies": {
+		"@emotion/react": "^11.14.0",
+		"@emotion/styled": "^11.14.0",
+		"@mui/icons-material": "^5.17.1",
+		"@next/third-parties": "^15.2.4",
+		"clsx": "^2.1.1",
+		"gatsby": "^5.14.1",
+		"gatsby-image": "^3.11.0",
+		"gatsby-plugin-google-gtag": "^5.14.0",
+		"gatsby-plugin-image": "^3.14.0",
+		"gatsby-plugin-manifest": "^5.14.0",
+		"gatsby-plugin-sharp": "^5.14.0",
+		"gatsby-plugin-sitemap": "^6.14.0",
+		"gatsby-source-filesystem": "^5.14.0",
+		"gatsby-transformer-sharp": "^5.14.0",
+		"lefthook": "^1.11.6",
+		"next": "^15.2.4",
+		"react": "^19.1.0",
+		"react-dom": "^19.1.0",
+		"react-helmet": "^6.1.0",
+		"react-image-mapper": "^0.0.15",
+		"styled-components": "^6.1.16"
+	},
+	"devDependencies": {
+		"@biomejs/biome": "1.9.4",
+		"@eslint/js": "^9.23.0",
+		"@types/node": "^20.17.28",
+		"@types/react": "^18.3.20",
+		"@types/react-dom": "^18.3.5",
+		"@types/react-helmet": "^6.1.11",
+		"eslint": "^9.23.0",
+		"eslint-plugin-react": "^7.37.4",
+		"globals": "^16.0.0",
+		"typescript": "^5.8.2",
+		"typescript-eslint": "^8.28.0"
+	}
 }

@@ -1,28 +1,28 @@
 @charset "UTF-8";
 
-.header-root{
-  background-color: #fce8e6;
-  display: flex;
-  align-items: center; /* オプション：要素を垂直方向に中央揃えにします */
-  gap: 10px; /* オプション：要素間の間隔を設定します */
+.header-root {
+	background-color: #fce8e6;
+	display: flex;
+	align-items: center; /* オプション：要素を垂直方向に中央揃えにします */
+	gap: 10px; /* オプション：要素間の間隔を設定します */
 }
 
-.logo-image{
-  width: 100px;
-  height: 100px;
-  margin: 10px;
+.logo-image {
+	width: 100px;
+	height: 100px;
+	margin: 10px;
 }
 
 @media (max-width: 768px) {
-  /* スマホ用 */
-  .logo-image{
-    width: 70px!important;
-    height: 70px!important;
-  }
+	/* スマホ用 */
+	.logo-image {
+		width: 70px !important;
+		height: 70px !important;
+	}
 }
 
-.school-name-image{
-  width: 159.25px!important;
-  height: 62.3px!important;
-  margin: 10px;
+.school-name-image {
+	width: 159.25px !important;
+	height: 62.3px !important;
+	margin: 10px;
 }

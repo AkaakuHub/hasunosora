@@ -7,7 +7,7 @@ import React from "react";
 type HeadingType = "h1" | "h2" | "h3";
 
 type Props = PropsWithChildren<{
-  as: HeadingType;
+	as: HeadingType;
 }>;
 
 /**
@@ -20,18 +20,18 @@ type Props = PropsWithChildren<{
  * <Heading as="h3">小見出し</Heading>
  */
 export function Heading({ as: Component, children }: Props) {
-  return (
-    <Component className={`${Component} base`}>
-      <div className="heading-root">
-        <img src="/lotus1.svg"
-          alt="蓮のイラスト"
-          width={1610 * 0.05}
-          height={992 * 0.05}
-          className="no-click"
-        />
-        {children}
-      </div>
-
-    </Component>
-  );
+	return (
+		<Component className={`${Component} base`}>
+			<div className="heading-root">
+				<img
+					src="/lotus1.svg"
+					alt="蓮のイラスト"
+					width={1610 * 0.05}
+					height={992 * 0.05}
+					className="no-click"
+				/>
+				{children}
+			</div>
+		</Component>
+	);
 }

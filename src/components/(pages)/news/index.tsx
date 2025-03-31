@@ -1,19 +1,14 @@
-import React from "react";
+import type React from "react";
 
 import "./index.css";
 
 import { Heading } from "../../(parts)/heading";
 
-import { AprilfoolPropsType } from "../../../types";
+import type { AprilfoolPropsType } from "../../../types/types";
 
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 
-const News: React.FC<AprilfoolPropsType> = ({
-	isAMOpen,
-	setIsAMOpen,
-	type,
-	setType,
-}) => {
+const News: React.FC<AprilfoolPropsType> = ({ setIsAMOpen, setType }) => {
 	type NewsDataType = {
 		date: string;
 		title: string;
@@ -47,7 +42,8 @@ const News: React.FC<AprilfoolPropsType> = ({
 
 	const MakeNewsComponent = ({ news }: { news: NewsDataType }) => {
 		return (
-			<div
+			<button
+				type="button"
 				className="news-card"
 				onClick={() => {
 					setIsAMOpen(true);
@@ -64,22 +60,26 @@ const News: React.FC<AprilfoolPropsType> = ({
 					<span>{news.date}</span>
 				</p>
 				<p>{news.title}</p>
-			</div>
+			</button>
 		);
 	};
 
 	return (
 		<div className="white-background-root">
 			<Heading as="h1">お知らせ</Heading>
-			{newsData.map((news, index) => (
-				<MakeNewsComponent key={index} news={news} />
+			{newsData.map((news) => (
+				<MakeNewsComponent key={news.title} news={news} />
 			))}
-			<div className="show-more-wrapper" onClick={() => setIsAMOpen(true)}>
+			<button
+				type="button"
+				className="show-more-wrapper"
+				onClick={() => setIsAMOpen(true)}
+			>
 				<span>もっと見る</span>
 				<span className="news-arrow">
 					<ArrowForwardIcon />
 				</span>
-			</div>
+			</button>
 		</div>
 	);
 };

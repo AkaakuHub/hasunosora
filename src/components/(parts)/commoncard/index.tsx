@@ -1,8 +1,8 @@
-import React from "react";
+import type React from "react";
 
 import "./index.css";
 
-import { AprilfoolTypeType } from "../../../types";
+import type { AprilfoolTypeType } from "../../../types/types";
 
 type Props = {
 	title: string;
@@ -20,7 +20,8 @@ const CommonCard: React.FC<Props> = ({
 	setType,
 }) => {
 	return (
-		<div
+		<button
+			type="button"
 			className="common-card-root"
 			onClick={() => {
 				setIsAMOpen(true);
@@ -32,7 +33,7 @@ const CommonCard: React.FC<Props> = ({
 				<h2 className="common-card-title">{title}</h2>
 				<p className="common-card-body">{body}</p>
 			</div>
-		</div>
+		</button>
 	);
 };
 

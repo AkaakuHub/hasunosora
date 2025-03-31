@@ -1,12 +1,10 @@
-import React from "react";
-import { Heading } from "../../(parts)/heading";
+import type React from "react";
 
 import "./index.css";
 
 const About: React.FC = () => {
 	return (
 		<div className="background-root">
-			{/* <Heading as="h1">蓮ノ空女学院について</Heading> */}
 			<div className="about-text-wrapper">
 				<p className="about-text-1 paragraph">蓮の花咲く湖の傍に建つ</p>
 				<p className="about-text-2 paragraph">創立から100年以上の伝統が続く</p>

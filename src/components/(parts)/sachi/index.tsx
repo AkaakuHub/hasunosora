@@ -1,22 +1,18 @@
-import React, { useState, useEffect, useRef } from "react";
+import type React from "react";
+import { useState, useEffect, useRef } from "react";
 import ImageMapper from "react-image-mapper";
 import "./index.css";
 
-import { AprilfoolPropsType } from "../../../types";
+import type { AprilfoolPropsType } from "../../../types/types";
 
-const makeTweetContent = () => {
-	const url = "https://hasunosora.vercel.app";
-	const text = "蓮ノ空女学院 ホームページ";
-	const hashtags = "蓮ノ空,エイプリルフール";
-	return `https://twitter.com/intent/tweet?text=${text}&url=${url}&hashtags=${hashtags}`;
-};
+// const makeTweetContent = () => {
+// 	const url = "https://hasunosora.vercel.app";
+// 	const text = "蓮ノ空女学院 ホームページ";
+// 	const hashtags = "蓮ノ空,エイプリルフール";
+// 	return `https://twitter.com/intent/tweet?text=${text}&url=${url}&hashtags=${hashtags}`;
+// };
 
-const Sachi: React.FC<AprilfoolPropsType> = ({
-	isAMOpen,
-	setIsAMOpen,
-	type,
-	setType,
-}) => {
+const Sachi: React.FC<AprilfoolPropsType> = ({ setIsAMOpen, setType }) => {
 	const [windowWidth, setWindowWidth] = useState(0);
 	const containerRef = useRef<HTMLDivElement>(null);
 
@@ -34,7 +30,13 @@ const Sachi: React.FC<AprilfoolPropsType> = ({
 	}, []);
 
 	const handleClickImage = (
-		area: any,
+		area: {
+			name: string;
+			shape: string;
+			coords: number[];
+			preFillColor: string;
+			fillColor: string;
+		},
 		index: number,
 		event: React.MouseEvent,
 	) => {

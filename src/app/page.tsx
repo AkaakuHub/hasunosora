@@ -1,12 +1,12 @@
 "use client";
 
-import React, { useState, useEffect, useRef } from "react";
+import type React from "react";
+import { useState, useEffect, useRef } from "react";
 
 import clsx from "clsx";
 
 import Header from "../components/(pages)/header";
 import Footer from "../components/(pages)/footer";
-// import LotusMenu from "../components/(parts)/lotusmenu";
 
 import About from "../components/(pages)/about";
 import Exam from "../components/(pages)/exam";
@@ -16,7 +16,7 @@ import Schoollife from "../components/(pages)/schoollife";
 import Aprilfool from "../components/(parts)/aprilfool";
 import Sachi from "../components/(parts)/sachi";
 
-import { AprilfoolPropsType, AprilfoolTypeType } from "../types";
+import type { AprilfoolTypeType } from "../types/types";
 
 import { createGlobalStyle } from "styled-components";
 import styled from "styled-components";
@@ -90,7 +90,7 @@ const BackgroundImageComponent: React.FC<{
 		<BackgroundImageWrapper>
 			{backgroundImages.map((imgURL, index) => (
 				<BackgroundImage
-					key={index}
+					key={imgURL}
 					src={imgURL}
 					className={clsx({ "fade-in": index === activeImageIndex })}
 					style={{ zIndex: index === activeImageIndex ? 1 : 0 }}

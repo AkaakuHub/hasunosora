@@ -1,9 +1,8 @@
-import React, { useState, useEffect, useRef } from "react";
+import type React from "react";
+import { useState, useEffect, useRef } from "react";
 import "./index.css";
 
-interface LotusMenuProps {}
-
-const LotusMenu: React.FC<LotusMenuProps> = () => {
+const LotusMenu: React.FC = () => {
 	const [isOpen, setIsOpen] = useState<boolean>(false);
 	const menuRef = useRef<HTMLDivElement>(null);
 
@@ -13,6 +12,7 @@ const LotusMenu: React.FC<LotusMenuProps> = () => {
 		}
 	};
 
+	// biome-ignore lint/correctness/useExhaustiveDependencies: <explanation>
 	useEffect(() => {
 		document.addEventListener("mousedown", handleClickOutside);
 		return () => {
@@ -22,13 +22,14 @@ const LotusMenu: React.FC<LotusMenuProps> = () => {
 
 	return (
 		<div className="lotusmenu-root">
-			<div
+			<button
+				type="button"
 				className="lotus-menu-launcher"
 				onClick={() => setIsOpen((c) => !c)}
-			></div>
+			/>
 			{isOpen && (
 				<div className="lotus-menu-wrapper">
-					<div className="lotus-modal-bg"></div>
+					<div className="lotus-modal-bg" />
 					{/** lotus-modalの外またはがクリックされると閉じる!? */}
 					<div className="lotus-modal" ref={menuRef}>
 						<div className="petal-0">X</div>

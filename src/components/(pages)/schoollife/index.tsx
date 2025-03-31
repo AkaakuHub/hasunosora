@@ -1,16 +1,11 @@
-import React from "react";
+import type React from "react";
 import { Heading } from "../../(parts)/heading";
 
 import CommonCard from "../../(parts)/commoncard";
 
-import { AprilfoolPropsType } from "../../../types";
+import type { AprilfoolPropsType } from "../../../types/types";
 
-const Exam: React.FC<AprilfoolPropsType> = ({
-	isAMOpen,
-	setIsAMOpen,
-	type,
-	setType,
-}) => {
+const Exam: React.FC<AprilfoolPropsType> = ({ setIsAMOpen, setType }) => {
 	const CommonCardProps = {
 		setIsAMOpen: setIsAMOpen,
 		setType: setType,

@@ -24,9 +24,13 @@ const Footer = () => {
 				このサイトは4月1日に作られたものであり、公式とは一切関係ありません。
 				<br />
 				<br />
-				<div className="footer-privacy-policy" onClick={toggleModal}>
+				<button
+					type="button"
+					className="footer-privacy-policy"
+					onClick={toggleModal}
+				>
 					プライバシーポリシー
-				</div>
+				</button>
 				<br />
 				<br />
 				本サイトで使用されている画像の著作権は以下に帰属します。
@@ -36,11 +40,19 @@ const Footer = () => {
 			{showModal && (
 				<div className="footer-modal-container">
 					<div className="footer-modal">
-						<div className="footer-modal-bg" onClick={toggleModal}></div>
+						<button
+							type="button"
+							className="footer-modal-bg"
+							onClick={toggleModal}
+						/>
 						<div className="footer-modal-content">
-							<div className="footer-modal-close-button" onClick={toggleModal}>
+							<button
+								type="button"
+								className="footer-modal-close-button"
+								onClick={toggleModal}
+							>
 								<CloseIcon fontSize="large" />
-							</div>
+							</button>
 							<p className="footer-modal-main-text">
 								本サイトでは、ユーザー体験の向上やサイトの最適化のため、Googleアナリティクスを使用しています。
 								<br />

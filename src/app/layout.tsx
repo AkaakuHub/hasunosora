@@ -1,6 +1,13 @@
 import { GoogleTagManager } from "@next/third-parties/google";
 import type { Metadata } from "next";
+import { Yuji_Syuku } from "next/font/google";
 import type React from "react";
+
+const yujiSyuku = Yuji_Syuku({
+	subsets: ["latin"],
+	display: "swap",
+	weight: ["400"],
+});
 
 const baseURL = process.env.NEXT_PUBLIC_BASE_URL ?? "https://localhost:3000";
 
@@ -51,7 +58,7 @@ export default function RootLayout({
 	children: React.ReactNode;
 }) {
 	return (
-		<html lang="ja">
+		<html lang="ja" className={yujiSyuku.className}>
 			<head>
 				<GoogleTagManager gtmId="xxx" />
 			</head>

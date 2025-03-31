@@ -88,15 +88,20 @@ const BackgroundImageComponent: React.FC<{
 
 	return (
 		<BackgroundImageWrapper>
-			{backgroundImages.map((imgURL, index) => (
-				<BackgroundImage
-					key={imgURL}
-					src={imgURL}
-					className={clsx({ "fade-in": index === activeImageIndex })}
-					style={{ zIndex: index === activeImageIndex ? 1 : 0 }}
-					alt="background"
-				/>
-			))}
+			{backgroundImages.map((imgURL, index) => {
+				if (imgURL === "") {
+					return null;
+				}
+				return (
+					<BackgroundImage
+						key={imgURL}
+						src={imgURL}
+						className={clsx({ "fade-in": index === activeImageIndex })}
+						style={{ zIndex: index === activeImageIndex ? 1 : 0 }}
+						alt="background"
+					/>
+				);
+			})}
 		</BackgroundImageWrapper>
 	);
 };

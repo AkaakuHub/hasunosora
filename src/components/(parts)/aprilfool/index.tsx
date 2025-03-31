@@ -108,7 +108,7 @@ const Aprilfool: React.FC<AprilfoolPropsType> = ({
 				>
 					<CloseIcon fontSize="large" />
 				</button>
-				<p
+				<div
 					className={clsx("modal-main-text", type === "sachi" && "sachi-text")}
 				>
 					{message1}
@@ -141,7 +141,7 @@ const Aprilfool: React.FC<AprilfoolPropsType> = ({
 							でシェア
 						</span>
 					</a>
-				</p>
+				</div>
 			</div>
 		</div>
 	);

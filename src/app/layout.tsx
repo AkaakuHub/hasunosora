@@ -1,5 +1,5 @@
-import type React from "react";
 import { GoogleTagManager } from "@next/third-parties/google";
+import type React from "react";
 
 export const metadata = {
 	title: "Next.js",

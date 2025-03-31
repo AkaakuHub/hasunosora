@@ -1,13 +1,13 @@
+import clsx from "clsx";
 import type React from "react";
 import { useEffect, useRef, useState } from "react";
-import clsx from "clsx";
 
 import type { AprilfoolPropsType } from "../../../types/types";
 import "./index.css";
 
+import CloseIcon from "@mui/icons-material/Close";
 import TwitterIcon from "@mui/icons-material/Twitter";
 import XIcon from "@mui/icons-material/X";
-import CloseIcon from "@mui/icons-material/Close";
 
 const Aprilfool: React.FC<AprilfoolPropsType> = ({
 	isAMOpen,

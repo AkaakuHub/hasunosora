@@ -3,8 +3,6 @@
 import type React from "react";
 import { useEffect, useRef, useState } from "react";
 
-import clsx from "clsx";
-
 import Footer from "../components/(pages)/footer";
 import Header from "../components/(pages)/header";
 
@@ -19,9 +17,6 @@ import Sachi from "../components/(parts)/sachi";
 import type { AprilfoolTypeType } from "../types/types";
 
 import { createGlobalStyle } from "styled-components";
-
-import "./global.css";
-import "./page.css";
 
 const backgroundImages = [
 	"/background/1.webp",
@@ -71,7 +66,7 @@ const BackgroundImageComponent: React.FC<{
 					<img
 						key={imgURL}
 						src={imgURL}
-						className={`absolute top-0 left-0 w-full h-full object-cover opacity-0 transition-opacity duration-500 ease-in-out ${index === activeImageIndex ? 'opacity-100' : ''}`}
+						className={`absolute top-0 left-0 w-full h-full object-cover opacity-0 transition-opacity duration-500 ease-in-out ${index === activeImageIndex ? "opacity-100" : ""}`}
 						style={{ zIndex: index === activeImageIndex ? 1 : 0 }}
 						alt="background"
 					/>
@@ -144,7 +139,7 @@ export default function Home() {
 			<Aprilfool {...AprilfoolProps} />
 			<Header />
 
-			<div className="main-page">
+			<div className="mx-auto my-4 w-[90%] max-w-[1000px]">
 				<Section>
 					<About />
 				</Section>
@@ -160,7 +155,7 @@ export default function Home() {
 			</div>
 
 			<div
-				className={clsx(isLastImage ? "sachi-is-shown" : "", "sachi-wrapper")}
+				className={`opacity-0 transition-opacity duration-500 ease-in-out z-0 ${isLastImage ? "opacity-100" : ""}`}
 			>
 				<Sachi {...AprilfoolProps} />
 			</div>

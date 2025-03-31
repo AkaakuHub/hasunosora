@@ -1,9 +1,7 @@
-import clsx from "clsx";
 import type React from "react";
 import { useEffect, useRef, useState } from "react";
 
 import type { AprilfoolPropsType } from "../../../types/types";
-import "./index.css";
 
 import CloseIcon from "@mui/icons-material/Close";
 import TwitterIcon from "@mui/icons-material/Twitter";
@@ -93,31 +91,35 @@ const Aprilfool: React.FC<AprilfoolPropsType> = ({
 
 	return (
 		<div
-			className={clsx(
-				"modal-root",
-				isAMOpen && "is-shown",
-				isVisible && "is-visible",
-			)}
+			className={`fixed top-0 left-0 w-full h-full flex justify-center items-center opacity-0 transition-opacity duration-500 pointer-events-none z-[10000] ${
+				isAMOpen ? "opacity-100 pointer-events-auto" : ""
+			} ${isVisible ? "flex" : ""}`}
 		>
-			<div className="modal-bg" />
-			<div className="modal" ref={menuRef}>
+			<div
+				className="z-[10001] w-full h-full bg-gray-600 absolute top-0 left-0 opacity-0 transition-opacity duration-500 
+      ${isAMOpen ? 'opacity-100' : ''}"
+			/>
+			<div
+				className="fixed z-[10002] w-4/5 max-w-[800px] max-h-[80vh] bg-white rounded-lg p-4 overflow-auto"
+				ref={menuRef}
+			>
 				<button
 					type="button"
-					className="modal-close-button"
+					className="absolute top-4 right-4 w-9 h-9 rounded-full flex cursor-pointer hover:bg-gray-100"
 					onClick={() => setIsAMOpen(false)}
 				>
 					<CloseIcon fontSize="large" />
 				</button>
 				<div
-					className={clsx("modal-main-text", type === "sachi" && "sachi-text")}
+					className={`mt-8 text-center ${type === "sachi" ? "sachi-text" : ""}`}
 				>
 					{message1}
 					<br />
-					<div className="modal-image-container">
+					<div className="mt-4 max-w-full max-h-[40vh] overflow-hidden">
 						<img
 							src={modalImageURL}
 							alt={`${type}の画像`}
-							className="modal-image no-click"
+							className="max-w-full max-h-full object-contain no-click"
 						/>
 					</div>
 					<br />
@@ -125,17 +127,17 @@ const Aprilfool: React.FC<AprilfoolPropsType> = ({
 						href={makeTweetContent(type)}
 						target="_blank"
 						rel="noreferrer"
-						className="share-button-wrapper"
+						className="mt-8 text-center justify-center no-underline inline-block"
 					>
 						<span
-							className="share-button"
+							className="no-underline text-white text-center inline-flex items-center p-1.5 rounded-md leading-none text-2xl"
 							style={{
 								backgroundColor: isHovering ? "#1DA1F2" : "#000",
 							}}
 							onMouseEnter={handleMouseEnter}
 							onMouseLeave={handleMouseLeave}
 						>
-							<span className="icon-wrapper">
+							<span className="align-middle">
 								{isHovering ? <TwitterIcon /> : <XIcon />}
 							</span>
 							でシェア

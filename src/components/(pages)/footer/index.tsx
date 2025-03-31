@@ -37,16 +37,22 @@ const Footer = () => {
 				©PL!HS ©S ©2023 BNML ©ODD No.
 			</p>
 			{showModal && (
-				<div className="fixed z-[1000] left-0 top-0 w-full h-full overflow-auto bg-black/40">
+				<div
+					className={`fixed inset-0 z-[1000] flex items-center justify-center transition-all duration-300 ${
+						showModal
+							? "opacity-100 pointer-events-auto"
+							: "opacity-0 pointer-events-none"
+					}`}
+				>
 					<button
 						type="button"
-						className="fixed z-[1001] left-0 top-0 w-full h-full"
+						className="absolute inset-0 bg-black/40 transition-opacity duration-300"
 						onClick={toggleModal}
 					/>
-					<div className="relative bg-white mx-auto mt-[15%] p-5 border border-gray-200 w-4/5 max-w-[600px] rounded z-[1002]">
+					<div className="relative bg-white mx-auto p-5 border border-gray-200 w-4/5 max-w-[600px] rounded-lg shadow-lg transition-transform duration-300 scale-100">
 						<button
 							type="button"
-							className="absolute top-2.5 right-2.5 cursor-pointer"
+							className="absolute top-2.5 right-2.5 p-1 rounded-full hover:bg-gray-100 cursor-pointer"
 							onClick={toggleModal}
 						>
 							<CloseIcon fontSize="large" />
@@ -64,6 +70,7 @@ const Footer = () => {
 								href="https://marketingplatform.google.com/about/analytics/terms/jp/"
 								target="_blank"
 								rel="noreferrer"
+								className="text-blue-600 hover:underline"
 							>
 								Googleアナリティクス利用規約
 							</a>
@@ -72,6 +79,7 @@ const Footer = () => {
 								href="https://policies.google.com/technologies/ads?hl=ja"
 								target="_blank"
 								rel="noreferrer"
+								className="text-blue-600 hover:underline"
 							>
 								Googleのポリシーと規約
 							</a>

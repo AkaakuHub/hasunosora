@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import type React from "react";
 import { useEffect, useRef, useState } from "react";
 
@@ -79,38 +80,54 @@ const BackgroundImageComponent: React.FC<{
 type SectionProps = {
 	children: React.ReactNode;
 	title?: string;
+	moreLink?: string;
 };
 
-const Section: React.FC<SectionProps> = ({ children, title }) => {
+const Section: React.FC<SectionProps> = ({ children, title, moreLink }) => {
 	const sectionRef = useRef<HTMLDivElement>(null);
 
-	useEffect(() => {
-		const handleScroll = () => {
-			const sectionRect = sectionRef.current?.getBoundingClientRect();
-			if (!sectionRect) return;
-		};
-
-		window.addEventListener("scroll", handleScroll);
-		return () => window.removeEventListener("scroll", handleScroll);
-	}, []);
-
 	return (
-		<div className="section-root mb-12" ref={sectionRef}>
+		<div
+			className="bg-white/95 rounded shadow-sm overflow-hidden"
+			ref={sectionRef}
+		>
 			{title && (
-				<div className="border-l-4 border-blue-700 pl-3 mb-4 flex items-center">
-					<h2 className="text-xl font-bold text-blue-800">{title}</h2>
-					<img
-					src="/lotus1.svg"
-					alt="蓮のイラスト"
-					width={1610 * 0.024}
-					height={992 * 0.024}
-					className="pointer-events-none select-none"
-				/>
+				<div className="bg-blue-700 text-white px-4 py-2 flex justify-between items-center">
+					<h2 className="text-lg font-bold flex items-center">
+						{title}
+						<img
+							src="/lotus1.svg"
+							alt="蓮のイラスト"
+							width={1610 * 0.018}
+							height={992 * 0.018}
+							className="ml-2 pointer-events-none select-none"
+						/>
+					</h2>
+					{moreLink && (
+						<Link
+							href={moreLink}
+							className="text-white text-sm hover:underline"
+						>
+							一覧へ
+						</Link>
+					)}
 				</div>
 			)}
-			<div className="rounded-lg shadow-md p-6 border border-gray-200">
-				{children}
-			</div>
+			<div className="p-4">{children}</div>
+		</div>
+	);
+};
+
+const QuickLink: React.FC<{ title: string; icon?: string }> = ({
+	title,
+	icon,
+}) => {
+	return (
+		<div className="bg-white/90 border border-gray-200 rounded shadow-sm hover:bg-blue-50 transition-colors">
+			<Link href="#" className="flex items-center p-3 text-blue-800">
+				{icon && <img src={icon} alt="" className="w-5 h-5 mr-2" />}
+				<span className="font-medium">{title}</span>
+			</Link>
 		</div>
 	);
 };
@@ -148,27 +165,81 @@ export default function Home() {
 			<BackgroundImageComponent setIsLastImage={setIsLastImage} />
 			<Aprilfool {...AprilfoolProps} />
 
-			<div className="sticky top-0 z-50 w-full">
-				<Header />
-			</div>
-
-			<main className="container mx-auto px-4 py-8 relative z-10">
-				<div className="bg-white/80 rounded-lg shadow-lg p-6 mb-8">
-					<h1 className="text-2xl font-bold text-center text-blue-900 mb-2">
-						蓮ノ空女学院
-					</h1>
-					<p className="text-center text-gray-700">
-						～未来へ羽ばたく若人たちの学び舎～
-					</p>
+			<header className="sticky top-0 z-50 w-full bg-school-pink border-b border-gray-200 shadow-sm">
+				<div className="container mx-auto px-4">
+					<div className="flex items-center justify-between py-4">
+						<div className="flex items-center">
+							<img src="/lotus1.svg" alt="校章" className="w-10 h-10 mr-3" />
+							<div>
+								<h1 className="text-xl font-bold text-blue-800">
+									蓮ノ空女学院
+								</h1>
+								<p className="text-xs text-gray-600">
+									Dream believers, you believe.
+								</p>
+							</div>
+						</div>
+						<div className="hidden md:block">
+							<Header />
+						</div>
+					</div>
 				</div>
+			</header>
 
-				<div className="grid grid-cols-1 gap-8 md:grid-cols-12">
-					<div className="md:col-span-8">
-						<Section title="学校紹介">
-							<About />
-						</Section>
+			<div className="container mx-auto px-4 relative z-10 mb-40">
+				<About />
 
-						<Section title="お知らせ">
+				<div className="grid grid-cols-1 gap-6 lg:grid-cols-4 lg:gap-8">
+					<div className="order-2 lg:order-1 lg:col-span-1 flex gap-6 flex-col">
+						<div className="bg-blue-700 text-white px-4 py-2 mb-4 rounded-t shadow-sm">
+							<h2 className="text-lg font-bold">メニュー</h2>
+						</div>
+
+						<div className="space-y-2">
+							<QuickLink title="学校紹介" icon="/lotus1.svg" />
+							<QuickLink title="入試情報" icon="/lotus1.svg" />
+							<QuickLink title="学校生活" icon="/lotus1.svg" />
+							<QuickLink title="部活動" icon="/lotus1.svg" />
+							<QuickLink title="進路指導" icon="/lotus1.svg" />
+							<QuickLink title="アクセス" icon="/lotus1.svg" />
+						</div>
+
+						<div className="bg-white/95 rounded shadow-sm">
+							<div className="bg-blue-700 text-white px-4 py-2">
+								<h2 className="text-lg font-bold">学校カレンダー</h2>
+							</div>
+							<div className="p-4">
+								<div className="text-sm space-y-3">
+									<p className="flex justify-between border-b border-gray-200 pb-2">
+										<span className="font-medium">4月7日(水)</span>
+										<span>新学期始業式</span>
+									</p>
+									<p className="flex justify-between border-b border-gray-200 pb-2">
+										<span className="font-medium">4月8日(木)</span>
+										<span>入学式</span>
+									</p>
+									<p className="flex justify-between border-b border-gray-200 pb-2">
+										<span className="font-medium">4月15日(木)</span>
+										<span>健康診断</span>
+									</p>
+								</div>
+							</div>
+						</div>
+
+						<div className="bg-white/95 rounded shadow-sm">
+							<div className="bg-blue-700 text-white px-4 py-2">
+								<h2 className="text-lg font-bold">アクセス</h2>
+							</div>
+							<div className="p-4">
+								<p className="text-sm mb-2">〒000-0000</p>
+								<p className="text-sm mb-4">○○県△△市□□町1-1</p>
+								<p className="text-sm">TEL: 000-000-0000</p>
+							</div>
+						</div>
+					</div>
+
+					<div className="order-1 lg:order-2 lg:col-span-3 flex flex-col gap-6">
+						<Section title="部活動・生徒会ニュース" moreLink="#">
 							<News {...AprilfoolProps} />
 						</Section>
 
@@ -180,39 +251,8 @@ export default function Home() {
 							<Exam {...AprilfoolProps} />
 						</Section>
 					</div>
-
-					<div className="md:col-span-4">
-						<div className="bg-white/90 rounded-lg shadow-md p-4 mb-6 border border-gray-200">
-							<h3 className="text-lg font-bold text-blue-800 border-b-2 border-blue-800 pb-2 mb-4">
-								学校カレンダー
-							</h3>
-							<div className="text-sm space-y-2">
-								<p className="flex justify-between">
-									<span className="font-medium">4月7日(水)</span>
-									<span>新学期始業式</span>
-								</p>
-								<p className="flex justify-between">
-									<span className="font-medium">4月8日(木)</span>
-									<span>入学式</span>
-								</p>
-								<p className="flex justify-between">
-									<span className="font-medium">4月15日(木)</span>
-									<span>健康診断</span>
-								</p>
-							</div>
-						</div>
-
-						<div className="bg-white/90 rounded-lg shadow-md p-4 mb-6 border border-gray-200">
-							<h3 className="text-lg font-bold text-blue-800 border-b-2 border-blue-800 pb-2 mb-4">
-								アクセス
-							</h3>
-							<p className="text-sm mb-2">〒000-0000</p>
-							<p className="text-sm mb-4">○○県△△市□□町1-1</p>
-							<p className="text-sm">TEL: 000-000-0000</p>
-						</div>
-					</div>
 				</div>
-			</main>
+			</div>
 
 			<div
 				className={`opacity-0 transition-opacity duration-500 ease-in-out z-0 ${isLastImage ? "opacity-100" : ""}`}

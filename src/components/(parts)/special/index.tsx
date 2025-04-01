@@ -2,9 +2,12 @@ import type React from "react";
 import { useEffect, useRef, useState } from "react";
 import ImageMapper from "react-image-mapper";
 
+import { useYear } from "../../../hooks/useYear";
 import type { AprilfoolPropsType } from "../../../types/types";
 
 const Sachi: React.FC<AprilfoolPropsType> = ({ setIsAMOpen, setType }) => {
+	const { paramYear } = useYear();
+
 	const [windowWidth, setWindowWidth] = useState(0);
 	const containerRef = useRef<HTMLDivElement>(null);
 
@@ -61,7 +64,7 @@ const Sachi: React.FC<AprilfoolPropsType> = ({ setIsAMOpen, setType }) => {
 			ref={containerRef}
 		>
 			<ImageMapper
-				src="/background/7.webp"
+				src={`/special/${paramYear}/background.webp`}
 				map={MAP}
 				width={getWidth()}
 				imgWidth={1920}

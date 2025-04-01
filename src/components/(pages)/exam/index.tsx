@@ -10,7 +10,7 @@ const Exam: React.FC<AprilfoolPropsType> = ({ setIsAMOpen, setType }) => {
 					入試情報
 				</h3>
 				<p className="text-sm mb-4">
-					令和7年度の入学試験に関する情報を掲載しています。出願期間や試験日程をご確認ください。
+					令和6年度の入学試験に関する情報を掲載しています。出願期間や試験日程をご確認ください。
 				</p>
 
 				<div className="overflow-x-auto">
@@ -34,27 +34,15 @@ const Exam: React.FC<AprilfoolPropsType> = ({ setIsAMOpen, setType }) => {
 						<tbody>
 							<tr>
 								<td className="border border-gray-300 px-4 py-2">推薦入試</td>
-								<td className="border border-gray-300 px-4 py-2">
-									2025年1月15日〜1月25日
-								</td>
-								<td className="border border-gray-300 px-4 py-2">
-									2025年2月2日
-								</td>
-								<td className="border border-gray-300 px-4 py-2">
-									2025年2月10日
-								</td>
+								<td className="border border-gray-300 px-4 py-2">未定</td>
+								<td className="border border-gray-300 px-4 py-2">未定</td>
+								<td className="border border-gray-300 px-4 py-2">未定</td>
 							</tr>
 							<tr className="bg-gray-50">
 								<td className="border border-gray-300 px-4 py-2">一般入試</td>
-								<td className="border border-gray-300 px-4 py-2">
-									2025年2月1日〜2月15日
-								</td>
-								<td className="border border-gray-300 px-4 py-2">
-									2025年3月1日
-								</td>
-								<td className="border border-gray-300 px-4 py-2">
-									2025年3月10日
-								</td>
+								<td className="border border-gray-300 px-4 py-2">未定</td>
+								<td className="border border-gray-300 px-4 py-2">未定</td>
+								<td className="border border-gray-300 px-4 py-2">未定</td>
 							</tr>
 						</tbody>
 					</table>
@@ -118,8 +106,6 @@ const Exam: React.FC<AprilfoolPropsType> = ({ setIsAMOpen, setType }) => {
 				<p className="text-sm">
 					入試に関するご質問は、入試広報部までお問い合わせください。
 				</p>
-				<p className="text-sm mt-2">TEL: 000-000-0000（平日 9:00〜17:00）</p>
-				<p className="text-sm">メール: exam@hasunosora.ed.jp</p>
 			</div>
 		</div>
 	);

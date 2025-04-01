@@ -27,7 +27,7 @@ const NewsItem: React.FC<{
 				</span>
 				<button
 					type="button"
-					className="font-medium text-blue-600 hover:underline"
+					className="font-medium text-blue-600 hover:underline text-start"
 					onClick={() => onClick("normal" as AprilfoolTypeType)}
 				>
 					{title}

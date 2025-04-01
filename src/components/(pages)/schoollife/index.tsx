@@ -27,9 +27,9 @@ const Schoollife: React.FC<AprilfoolPropsType> = ({ setIsAMOpen, setType }) => {
 						<div className="bg-pink-600 text-white rounded-full p-2 mr-3">
 							<IconSchool />
 						</div>
-						<div>
+						<div className="flex items-start flex-col">
 							<h4 className="font-bold text-pink-800">学生寮</h4>
-							<p className="text-sm text-gray-700 mt-1">
+							<p className="text-sm text-gray-700 mt-1 text-start">
 								寮生活についての情報です。年間行事や食事、施設設備についてご紹介します。
 							</p>
 							<div className="text-pink-700 mt-2 text-sm font-medium">
@@ -51,9 +51,9 @@ const Schoollife: React.FC<AprilfoolPropsType> = ({ setIsAMOpen, setType }) => {
 						<div className="bg-green-600 text-white rounded-full p-2 mr-3">
 							<IconBooks />
 						</div>
-						<div>
+						<div className="flex items-start flex-col">
 							<h4 className="font-bold text-green-800">施設・設備</h4>
-							<p className="text-sm text-gray-700 mt-1">
+							<p className="text-sm text-gray-700 mt-1 text-start">
 								充実した施設と設備を紹介します。図書館や体育館、IT設備など学習環境が整っています。
 							</p>
 							<div className="text-green-700 mt-2 text-sm font-medium">
@@ -119,8 +119,7 @@ const Schoollife: React.FC<AprilfoolPropsType> = ({ setIsAMOpen, setType }) => {
 						</p>
 						<ul className="text-sm list-disc list-inside">
 							<li>夏服・冬服の2種類</li>
-							<li>シャツ・ブラウスは白色</li>
-							<li>リボン・ネクタイは学年色</li>
+							<li>リボンは学年色</li>
 						</ul>
 					</div>
 					<div className="flex-1 text-right">

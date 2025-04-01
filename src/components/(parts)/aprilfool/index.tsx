@@ -37,14 +37,16 @@ const Aprilfool: React.FC<AprilfoolPropsType> = ({
 	};
 
 	const makeTweetContent = (type: string) => {
+		const baseURL =
+			process.env.NEXT_PUBLIC_BASE_URL ?? "https://localhost:3000";
 		if (type === "normal") {
-			const url = "https://hasunosora.vercel.app";
+			const url = baseURL;
 			const text = "蓮ノ空女学院 ホームページ";
 			const hashtags = "蓮ノ空,エイプリルフール";
 			return `https://twitter.com/intent/tweet?text=${text}&url=${url}&hashtags=${hashtags}`;
 		}
 		if (type === "sachi") {
-			const url = "https://hasunosora.vercel.app";
+			const url = baseURL;
 			const text = "大切な思い出を発見しました";
 			const hashtags = "蓮ノ空,エイプリルフール";
 			return `https://twitter.com/intent/tweet?text=${text}&url=${url}&hashtags=${hashtags}`;
@@ -105,40 +107,38 @@ const Aprilfool: React.FC<AprilfoolPropsType> = ({
 				>
 					<CloseIcon fontSize="large" />
 				</button>
-				<div
-					className={`mt-8 text-center ${type === "sachi" ? "whitespace-pre-line text-left" : ""}`}
-				>
-					{message1}
-					<br />
-					<div className="mt-4 max-w-full max-h-[40vh] overflow-hidden">
+				<div className="text-start flex gap-8 flex-col">
+					<span>{message1}</span>
+					<div className="max-w-full max-h-[40vh] overflow-hidden">
 						<img
 							src={modalImageURL}
 							alt={`${type}の画像`}
 							className="max-w-full max-h-full object-contain pointer-events-none select-none"
 						/>
 					</div>
-					<br />
-					<a
-						href={makeTweetContent(type)}
-						target="_blank"
-						rel="noreferrer"
-						className="mt-8 text-center justify-center no-underline inline-block"
-					>
-						<button
-							type="button"
-							className="no-underline text-white text-center inline-flex items-center p-1.5 rounded-md leading-none text-2xl"
-							style={{
-								backgroundColor: isHovering ? "#1DA1F2" : "#000",
-							}}
-							onMouseEnter={handleMouseEnter}
-							onMouseLeave={handleMouseLeave}
+					<div className="mx-auto">
+						<a
+							href={makeTweetContent(type)}
+							target="_blank"
+							rel="noreferrer"
+							className="text-center justify-center no-underline inline-block"
 						>
-							<span className="align-middle">
-								{isHovering ? <TwitterIcon /> : <XIcon />}
-							</span>
-							でシェア
-						</button>
-					</a>
+							<button
+								type="button"
+								className="no-underline text-white text-center inline-flex items-center p-1.5 rounded-md leading-none text-2xl cursor-pointer"
+								style={{
+									backgroundColor: isHovering ? "#1DA1F2" : "#000",
+								}}
+								onMouseEnter={handleMouseEnter}
+								onMouseLeave={handleMouseLeave}
+							>
+								<span className="align-middle">
+									{isHovering ? <TwitterIcon /> : <XIcon />}
+								</span>
+								でシェア
+							</button>
+						</a>
+					</div>
 				</div>
 			</div>
 		</div>

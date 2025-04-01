@@ -76,10 +76,10 @@ const Schoollife: React.FC<AprilfoolPropsType> = ({ setIsAMOpen, setType }) => {
 							</div>
 							<ul className="text-sm text-left">
 								<li className="mb-1">・入学式</li>
-								<li className="mb-1">・新入生歓迎会</li>
-								<li className="mb-1">・春季校外学習</li>
-								<li className="mb-1">・前期中間試験</li>
+								<li className="mb-1">・部活動説明会</li>
 								<li className="mb-1">・体育祭</li>
+								<li className="mb-1">・撫子祭</li>
+								<li className="mb-1">・期末試験</li>
 							</ul>
 						</div>
 						<div className="text-center">
@@ -87,11 +87,10 @@ const Schoollife: React.FC<AprilfoolPropsType> = ({ setIsAMOpen, setType }) => {
 								2学期
 							</div>
 							<ul className="text-sm text-left">
-								<li className="mb-1">・前期期末試験</li>
 								<li className="mb-1">・夏季休業</li>
-								<li className="mb-1">・文化祭</li>
-								<li className="mb-1">・後期中間試験</li>
-								<li className="mb-1">・芸術鑑賞会</li>
+								<li className="mb-1">・竜胆祭</li>
+								<li className="mb-1">・オープンキャンパス</li>
+								<li className="mb-1">・期末試験</li>
 							</ul>
 						</div>
 						<div className="text-center">
@@ -99,11 +98,10 @@ const Schoollife: React.FC<AprilfoolPropsType> = ({ setIsAMOpen, setType }) => {
 								3学期
 							</div>
 							<ul className="text-sm text-left">
-								<li className="mb-1">・修学旅行（2年）</li>
-								<li className="mb-1">・後期期末試験</li>
-								<li className="mb-1">・球技大会</li>
+								<li className="mb-1">・冬季休業</li>
+								<li className="mb-1">・期末試験</li>
 								<li className="mb-1">・卒業式</li>
-								<li className="mb-1">・修了式</li>
+								<li className="mb-1">・蓮華祭</li>
 							</ul>
 						</div>
 					</div>

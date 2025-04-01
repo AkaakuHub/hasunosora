@@ -1,15 +1,25 @@
 import { IconMenu2 } from "@tabler/icons-react";
 import type React from "react";
+import { useYear } from "../../../hooks/useYear";
 import type {
 	AprilfoolPropsType,
 	AprilfoolTypeType,
 } from "../../../types/types";
 
 const Header: React.FC<AprilfoolPropsType> = ({ setIsAMOpen, setType }) => {
+	const { paramYear } = useYear();
+
 	const handleModal = (type: AprilfoolTypeType) => {
 		setIsAMOpen(true);
 		setType(type);
 	};
+
+	let message = "";
+	if (paramYear === "2024") {
+		message = "Dream believers, I believe";
+	} else if (paramYear === "2025") {
+		message = "Dream believers, you believe...";
+	}
 	return (
 		<div className="bg-school-pink flex items-center gap-2.5 sticky top-0 z-50 w-full px-4">
 			<img
@@ -21,7 +31,7 @@ const Header: React.FC<AprilfoolPropsType> = ({ setIsAMOpen, setType }) => {
 			/>
 			<div>
 				<h1 className="text-xl font-bold text-school-blue">私立蓮ノ空女学院</h1>
-				<p className="text-xs text-gray-600">Dream believers, I believe...</p>
+				<p className="text-xs text-gray-600">{message}</p>
 			</div>
 			<button
 				type="button"

@@ -140,8 +140,8 @@ const QuickLink: React.FC<{
 };
 
 export default function Home() {
-  const currentYear = useYear(); // 年を取得
-  console.log(currentYear); // 取得した年をコンソールに表示
+	const { paramYear, realYear } = useYear();
+
 	const [isAMOpen, setIsAMOpen] = useState(false);
 	const [type, setType] = useState<AprilfoolTypeType>("normal");
 
@@ -153,13 +153,16 @@ export default function Home() {
 
 	const getRandomColor = () => {
 		const colors = [
-			"#FFBF00",
-			"#1053A6",
-			"#69CD82",
-			"#E7334A",
-			"#F79293",
-			"#A6A6A6",
+			"#F8B500",
+			"#5383C3",
+			"#68BE8D",
+			"#BA2636",
+			"#E7609E",
+			"#C8C2C6",
 		];
+		if (paramYear === "2025") {
+			colors.push("#A2D7DD", "#FAD764", "#9D8DE2");
+		}
 		return colors[Math.floor(Math.random() * colors.length)];
 	};
 

@@ -17,6 +17,7 @@ import Sachi from "../components/(parts)/sachi";
 import type { AprilfoolTypeType } from "../types/types";
 
 import { createGlobalStyle } from "styled-components";
+import Confirm from "../components/(parts)/confim";
 
 const backgroundImages = [
 	"/background/1.webp",
@@ -141,6 +142,8 @@ export default function Home() {
 	const [isAMOpen, setIsAMOpen] = useState(false);
 	const [type, setType] = useState<AprilfoolTypeType>("normal");
 
+	const [isFirstOpen, setIsFirstOpen] = useState(false);
+
 	const AprilfoolProps = { isAMOpen, setIsAMOpen, type, setType };
 
 	const [isLastImage, setIsLastImage] = useState(false);
@@ -169,6 +172,23 @@ export default function Home() {
 		setIsAMOpen(true);
 		setType(type);
 	};
+
+	const onCloseFirst = () => {
+		if (typeof window !== "undefined") {
+			localStorage.setItem("isFirstOpen_v1", "false");
+		}
+		setIsFirstOpen(false);
+	};
+
+	useEffect(() => {
+		if (typeof window !== "undefined") {
+			const isFirstOpen = localStorage.getItem("isFirstOpen_v1");
+			setIsFirstOpen(isFirstOpen !== "false");
+
+			// 読み込まれたら必ず一番上までスムーズにスクロール
+			window.scrollTo({ top: 0, behavior: "smooth" });
+		}
+	}, []);
 
 	return (
 		<div className="min-h-screen">
@@ -243,6 +263,7 @@ export default function Home() {
 			</div>
 
 			<Footer />
+			<Confirm isOpen={isFirstOpen} onClose={onCloseFirst} />
 		</div>
 	);
 }

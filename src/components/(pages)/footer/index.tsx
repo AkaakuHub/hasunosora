@@ -10,7 +10,7 @@ const Footer = () => {
 
 	return (
 		<>
-			<p className="bg-school-pink mb-0 p-4 text-center z-[103] relative">
+			<p className="bg-school-pink mb-0 p-4 text-center z-[50] relative">
 				問題がある場合の連絡は
 				<a
 					href="https://twitter.com/AkaakuHub"

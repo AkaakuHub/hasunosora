@@ -60,13 +60,22 @@ const Aprilfool: React.FC<AprilfoolPropsType> = ({
 	const message1Dict: { [key: string]: string } = {
 		normal:
 			"このサイトは、蓮ノ空のこと好き好きクラブのとある一員がエイプリルフールに作ったものであり、公式とは一切関係ありません。",
-		special: `春は出会いと別れの季節、ってよく言うだろう?
+		special: "",
+	};
+
+	if (paramYear === "2024") {
+		message1Dict.special = `
+春は出会いと別れの季節、ってよく言うだろう?
 あれは少し正確じゃないんだ。
 順番が逆なんだよねぃ。別れがあって、出会いがある。
 別れにはつらい気持ちになることもあるけど･･････
-未来は意外と明るいんだってことを、憶えておいてほしいな。
-    `,
-	};
+未来は意外と明るいんだってことを、憶えておいてほしいな。`;
+	}
+	if (paramYear === "2025") {
+		message1Dict.special = `
+ありがとう。temptemptemptemp
+`;
+	}
 
 	const [message1, setMessage1] = useState<JSX.Element[]>([]);
 	const [modalImageURL, setModalImageURL] = useState(
@@ -75,7 +84,16 @@ const Aprilfool: React.FC<AprilfoolPropsType> = ({
 
 	useEffect(() => {
 		setMessage1(
-			message1Dict[type].split("\n").map((line) => <p key={line}>{line}</p>),
+			message1Dict[type].split("\n").map((line, index) => (
+				<p
+					key={`${line}-${
+						// biome-ignore lint/suspicious/noArrayIndexKey: <explanation>
+						index
+					}`}
+				>
+					{line}
+				</p>
+			)),
 		);
 
 		if (type === "special") {

@@ -7,7 +7,7 @@ const Exam: React.FC<AprilfoolPropsType> = ({ setIsAMOpen, setType }) => {
 		<div className="bg-white/95 p-6 rounded-lg">
 			<div className="mb-6">
 				<p className="text-sm mb-4">
-					令和6年度の入学試験に関する情報を掲載しています。出願期間や試験日程をご確認ください。
+					入学試験に関する情報を掲載しています。出願期間や試験日程をご確認ください。
 				</p>
 
 				<div className="overflow-x-auto">

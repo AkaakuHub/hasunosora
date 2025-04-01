@@ -220,7 +220,7 @@ export default function Home() {
 						</div>
 					</div>
 
-					<div className="order-1 lg:order-2 lg:col-span-3 flex flex-col gap-6">
+					<div className="order-1 lg:order-2 lg:col-span-3 flex flex-col gap-20 md:gap-6 px-8 md:px-0">
 						<Section title="ニュース" onClick={() => handleModal("normal")}>
 							<News {...AprilfoolProps} />
 						</Section>

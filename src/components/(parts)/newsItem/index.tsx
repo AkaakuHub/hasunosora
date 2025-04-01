@@ -1,10 +1,12 @@
 import type React from "react";
+import type { AprilfoolTypeType } from "../../../types/types";
 
 const NewsItem: React.FC<{
 	date: string;
 	category: "重要" | "行事" | "入試" | "その他";
 	title: string;
-}> = ({ date, category, title }) => {
+	onClick: (type: AprilfoolTypeType) => void;
+}> = ({ date, category, title, onClick }) => {
 	const colorDictionary = {
 		重要: "#b51909",
 		行事: "#3f10ad",
@@ -16,11 +18,20 @@ const NewsItem: React.FC<{
 			<div className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-4">
 				<span className="text-sm text-gray-600 whitespace-nowrap">{date}</span>
 				<span
-					className={`text-xs text-white px-2 py-0.5 rounded whitespace-nowrap bg-[${colorDictionary[category]}]`}
+					className="text-sm text-white px-2 py-0.5 rounded whitespace-nowrap w-16 text-center"
+					style={{
+						backgroundColor: colorDictionary[category],
+					}}
 				>
 					{category}
 				</span>
-				<span className="font-medium">{title}</span>
+				<button
+					type="button"
+					className="font-medium text-blue-600 hover:underline"
+					onClick={() => onClick("normal" as AprilfoolTypeType)}
+				>
+					{title}
+				</button>
 			</div>
 		</div>
 	);

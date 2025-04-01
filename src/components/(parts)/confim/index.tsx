@@ -55,7 +55,7 @@ const Confirm: React.FC<ConfirmProps> = ({ isOpen, onClose }) => {
 
 				<div className="flex flex-col items-center px-6 py-8 text-center">
 					<p className="text-lg leading-relaxed mb-8 text-gray-800">
-						どこかに大切な「思い出」が隠されています！
+						どこかに&quot;今年の&quot;大切な「思い出」が隠されています！
 						<br />
 						ぜひ見つけてみよう！
 					</p>

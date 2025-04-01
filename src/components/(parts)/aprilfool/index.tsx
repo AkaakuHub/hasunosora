@@ -74,7 +74,7 @@ const Aprilfool: React.FC<AprilfoolPropsType> = ({
 	if (paramYear === "2025") {
 		message1Dict.special = `
 私たち...ラブライブ、優勝できました...！
-いや～私たちやっちゃったね！
+いや～私たち、やっちゃったね！
 うん、やったね。
 `;
 	}

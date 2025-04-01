@@ -1,5 +1,4 @@
 import type React from "react";
-import { Heading } from "../../(parts)/heading";
 
 import CommonCard from "../../(parts)/commoncard";
 
@@ -12,7 +11,6 @@ const Exam: React.FC<AprilfoolPropsType> = ({ setIsAMOpen, setType }) => {
 	};
 	return (
 		<div className="white-background-root">
-			<Heading as="h1">入試情報</Heading>
 			<div className="common-card-container">
 				<CommonCard
 					title="過去問"

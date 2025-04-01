@@ -1,6 +1,5 @@
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import type React from "react";
-import { Heading } from "../../(parts)/heading";
 import type { AprilfoolPropsType } from "../../../types/types";
 
 const News: React.FC<AprilfoolPropsType> = ({ setIsAMOpen, setType }) => {
@@ -61,7 +60,6 @@ const News: React.FC<AprilfoolPropsType> = ({ setIsAMOpen, setType }) => {
 
 	return (
 		<div className="p-4 rounded-b-lg my-48 bg-gradient-to-t from-white via-white/80 to-transparent">
-			<Heading as="h1">お知らせ</Heading>
 			{newsData.map((news) => (
 				<MakeNewsComponent key={news.title} news={news} />
 			))}

@@ -140,7 +140,7 @@ const QuickLink: React.FC<{
 };
 
 export default function Home() {
-	const { paramYear,  } = useYear();
+	const { paramYear } = useYear();
 
 	const [isAMOpen, setIsAMOpen] = useState(false);
 	const [type, setType] = useState<AprilfoolTypeType>("normal");

@@ -26,7 +26,9 @@ const Header: React.FC = () => {
 				className="w-[50px] h-[50px] m-2.5 no-click lg:w-[80px] lg:h-[80px] md:w-[70px] md:h-[70px] sm:w-[70px] sm:h-[70px]"
 			/>
 			<div className="flex-grow">
-				<h1 className="text-[16px] sm:text-xl font-bold text-school-blue">私立蓮ノ空女学院</h1>
+				<h1 className="text-[16px] sm:text-xl font-bold text-school-blue">
+					私立蓮ノ空女学院
+				</h1>
 				<p className="text-[9pt] sm:text-xs text-gray-600">{message}</p>
 			</div>
 

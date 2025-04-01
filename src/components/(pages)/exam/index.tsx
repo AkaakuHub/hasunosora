@@ -30,13 +30,17 @@ const Exam: React.FC<AprilfoolPropsType> = ({ setIsAMOpen, setType }) => {
 						</thead>
 						<tbody>
 							<tr>
-								<td className="border border-gray-300 p-2 min-w-24">推薦入試</td>
+								<td className="border border-gray-300 p-2 min-w-24">
+									推薦入試
+								</td>
 								<td className="border border-gray-300 p-2 min-w-24">未定</td>
 								<td className="border border-gray-300 p-2 min-w-24">未定</td>
 								<td className="border border-gray-300 p-2 min-w-24">未定</td>
 							</tr>
 							<tr className="bg-gray-50">
-								<td className="border border-gray-300 p-2 min-w-24">一般入試</td>
+								<td className="border border-gray-300 p-2 min-w-24">
+									一般入試
+								</td>
 								<td className="border border-gray-300 p-2 min-w-24">未定</td>
 								<td className="border border-gray-300 p-2 min-w-24">未定</td>
 								<td className="border border-gray-300 p-2 min-w-24">未定</td>

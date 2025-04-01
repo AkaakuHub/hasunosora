@@ -176,7 +176,7 @@ export default function Home() {
 			<BackgroundImageComponent setIsLastImage={setIsLastImage} />
 			<Aprilfool {...AprilfoolProps} />
 
-			<Header {...AprilfoolProps}/>
+			<Header {...AprilfoolProps} />
 
 			<div className="container mx-auto px-4 relative z-10 mb-40">
 				<About />

@@ -91,7 +91,7 @@ const Section: React.FC<SectionProps> = ({ children, title, onClick }) => {
 			ref={sectionRef}
 		>
 			{title && (
-				<div className="bg-blue-700 text-white px-4 py-2 flex justify-between items-center">
+				<div className="bg-school-blue text-white px-4 py-2 flex justify-between items-center">
 					<h2 className="text-lg font-bold flex items-center">
 						{title}
 						<img
@@ -129,7 +129,7 @@ const QuickLink: React.FC<{
 			className="bg-white/90 border border-gray-200 rounded shadow-sm hover:bg-blue-50 transition-colors w-full cursor-pointer"
 			onClick={onClick}
 		>
-			<span className="flex items-center p-3 text-blue-800">
+			<span className="flex items-center p-3 text-school-blue">
 				{icon && <img src={icon} alt="" className="w-5 h-5 mr-2" />}
 				<span className="font-medium">{title}</span>
 			</span>
@@ -176,14 +176,14 @@ export default function Home() {
 			<BackgroundImageComponent setIsLastImage={setIsLastImage} />
 			<Aprilfool {...AprilfoolProps} />
 
-			<Header />
+			<Header {...AprilfoolProps}/>
 
 			<div className="container mx-auto px-4 relative z-10 mb-40">
 				<About />
 
 				<div className="grid grid-cols-1 gap-6 lg:grid-cols-4 lg:gap-8">
 					<div className="hidden order-2 lg:order-1 lg:col-span-1 lg:flex flex-col">
-						<div className="bg-blue-700 text-white px-4 py-2 mb-4 rounded-t shadow-sm">
+						<div className="bg-school-blue text-white px-4 py-2 mb-4 rounded-t shadow-sm">
 							<h2 className="text-lg font-bold">メニュー</h2>
 						</div>
 						<div className="space-y-2">

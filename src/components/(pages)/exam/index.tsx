@@ -6,7 +6,7 @@ const Exam: React.FC<AprilfoolPropsType> = ({ setIsAMOpen, setType }) => {
 	return (
 		<div className="bg-white/95 p-6 rounded-lg">
 			<div className="mb-6">
-				<h3 className="text-lg font-bold text-blue-800 border-b-2 border-blue-700 pb-2 mb-4">
+				<h3 className="text-lg font-bold text-school-blue border-b-2 border-school-blue pb-2 mb-4">
 					入試情報
 				</h3>
 				<p className="text-sm mb-4">
@@ -17,32 +17,32 @@ const Exam: React.FC<AprilfoolPropsType> = ({ setIsAMOpen, setType }) => {
 					<table className="w-full border-collapse mb-4">
 						<thead>
 							<tr className="bg-blue-100">
-								<th className="border border-gray-300 px-4 py-2 text-left">
+								<th className="border border-gray-300 p-2 text-left min-w-24">
 									入試区分
 								</th>
-								<th className="border border-gray-300 px-4 py-2 text-left">
+								<th className="border border-gray-300 p-2 text-left min-w-24">
 									出願期間
 								</th>
-								<th className="border border-gray-300 px-4 py-2 text-left">
+								<th className="border border-gray-300 p-2 text-left min-w-24">
 									試験日
 								</th>
-								<th className="border border-gray-300 px-4 py-2 text-left">
+								<th className="border border-gray-300 p-2 text-left min-w-24">
 									合格発表
 								</th>
 							</tr>
 						</thead>
 						<tbody>
 							<tr>
-								<td className="border border-gray-300 px-4 py-2">推薦入試</td>
-								<td className="border border-gray-300 px-4 py-2">未定</td>
-								<td className="border border-gray-300 px-4 py-2">未定</td>
-								<td className="border border-gray-300 px-4 py-2">未定</td>
+								<td className="border border-gray-300 p-2 min-w-24">推薦入試</td>
+								<td className="border border-gray-300 p-2 min-w-24">未定</td>
+								<td className="border border-gray-300 p-2 min-w-24">未定</td>
+								<td className="border border-gray-300 p-2 min-w-24">未定</td>
 							</tr>
 							<tr className="bg-gray-50">
-								<td className="border border-gray-300 px-4 py-2">一般入試</td>
-								<td className="border border-gray-300 px-4 py-2">未定</td>
-								<td className="border border-gray-300 px-4 py-2">未定</td>
-								<td className="border border-gray-300 px-4 py-2">未定</td>
+								<td className="border border-gray-300 p-2 min-w-24">一般入試</td>
+								<td className="border border-gray-300 p-2 min-w-24">未定</td>
+								<td className="border border-gray-300 p-2 min-w-24">未定</td>
+								<td className="border border-gray-300 p-2 min-w-24">未定</td>
 							</tr>
 						</tbody>
 					</table>
@@ -59,15 +59,15 @@ const Exam: React.FC<AprilfoolPropsType> = ({ setIsAMOpen, setType }) => {
 					}}
 				>
 					<div className="flex items-start">
-						<div className="bg-blue-700 text-white rounded-full p-2 mr-3">
+						<div className="bg-school-blue text-white rounded-full p-2 mr-3">
 							<IconBook />
 						</div>
-						<div>
-							<h4 className="font-bold text-blue-800">過去問題</h4>
-							<p className="text-sm text-gray-700 mt-1">
+						<div className="flex items-start flex-col">
+							<h4 className="font-bold text-school-blue">過去問題</h4>
+							<p className="text-sm text-gray-700 mt-1 text-start">
 								過年度の入学試験問題と解答例を掲載しています。
 							</p>
-							<div className="text-blue-700 mt-2 text-sm font-medium">
+							<div className="text-school-blue mt-2 text-sm font-medium">
 								詳細を見る →
 							</div>
 						</div>
@@ -83,15 +83,15 @@ const Exam: React.FC<AprilfoolPropsType> = ({ setIsAMOpen, setType }) => {
 					}}
 				>
 					<div className="flex items-start">
-						<div className="bg-blue-700 text-white rounded-full p-2 mr-3">
+						<div className="bg-school-blue text-white rounded-full p-2 mr-3">
 							<IconFileDescription />
 						</div>
-						<div>
-							<h4 className="font-bold text-blue-800">出願書類</h4>
-							<p className="text-sm text-gray-700 mt-1">
+						<div className="flex items-start flex-col">
+							<h4 className="font-bold text-school-blue">出願書類</h4>
+							<p className="text-sm text-gray-700 mt-1 text-start">
 								入学願書の記入例や必要書類の一覧をご確認いただけます。
 							</p>
-							<div className="text-blue-700 mt-2 text-sm font-medium">
+							<div className="text-school-blue mt-2 text-sm font-medium">
 								詳細を見る →
 							</div>
 						</div>

@@ -6,7 +6,7 @@ const Schoollife: React.FC<AprilfoolPropsType> = ({ setIsAMOpen, setType }) => {
 	return (
 		<div className="bg-white/95 p-6 rounded-lg">
 			<div className="mb-6">
-				<h3 className="text-lg font-bold text-blue-800 border-b-2 border-blue-700 pb-2 mb-4">
+				<h3 className="text-lg font-bold text-school-blue border-b-2 border-school-blue pb-2 mb-4">
 					学校生活
 				</h3>
 				<p className="text-sm mb-4">
@@ -65,13 +65,13 @@ const Schoollife: React.FC<AprilfoolPropsType> = ({ setIsAMOpen, setType }) => {
 			</div>
 
 			<div className="bg-white border border-gray-200 rounded-lg overflow-hidden mb-6">
-				<div className="bg-blue-700 text-white px-4 py-2">
+				<div className="bg-school-blue text-white px-4 py-2">
 					<h4 className="font-bold">年間行事</h4>
 				</div>
 				<div className="p-4">
 					<div className="grid grid-cols-1 md:grid-cols-3 gap-4">
 						<div className="text-center">
-							<div className="font-bold text-blue-800 border-b border-blue-200 pb-1 mb-2">
+							<div className="font-bold text-school-blue border-b border-blue-200 pb-1 mb-2">
 								1学期
 							</div>
 							<ul className="text-sm text-left">
@@ -83,7 +83,7 @@ const Schoollife: React.FC<AprilfoolPropsType> = ({ setIsAMOpen, setType }) => {
 							</ul>
 						</div>
 						<div className="text-center">
-							<div className="font-bold text-blue-800 border-b border-blue-200 pb-1 mb-2">
+							<div className="font-bold text-school-blue border-b border-blue-200 pb-1 mb-2">
 								2学期
 							</div>
 							<ul className="text-sm text-left">
@@ -94,7 +94,7 @@ const Schoollife: React.FC<AprilfoolPropsType> = ({ setIsAMOpen, setType }) => {
 							</ul>
 						</div>
 						<div className="text-center">
-							<div className="font-bold text-blue-800 border-b border-blue-200 pb-1 mb-2">
+							<div className="font-bold text-school-blue border-b border-blue-200 pb-1 mb-2">
 								3学期
 							</div>
 							<ul className="text-sm text-left">
@@ -109,7 +109,7 @@ const Schoollife: React.FC<AprilfoolPropsType> = ({ setIsAMOpen, setType }) => {
 			</div>
 
 			<div className="bg-blue-50 p-4 border border-blue-200 rounded">
-				<h4 className="font-bold text-blue-800 mb-2">制服紹介</h4>
+				<h4 className="font-bold text-school-blue mb-2">制服紹介</h4>
 				<div className="flex flex-col md:flex-row gap-4">
 					<div className="flex-1">
 						<p className="text-sm mb-2">
@@ -123,7 +123,7 @@ const Schoollife: React.FC<AprilfoolPropsType> = ({ setIsAMOpen, setType }) => {
 					<div className="flex-1 text-right">
 						<button
 							type="button"
-							className="bg-blue-600 text-white px-4 py-2 rounded text-sm hover:bg-blue-700 transition-colors"
+							className="bg-school-blue text-white px-4 py-2 rounded text-sm hover:brightness-90 transition-brightness cursor-pointer"
 							onClick={() => {
 								setIsAMOpen(true);
 								setType("normal");

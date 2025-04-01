@@ -107,7 +107,7 @@ const Aprilfool: React.FC<AprilfoolPropsType> = ({
 				>
 					<CloseIcon fontSize="large" />
 				</button>
-				<div className="text-start flex gap-8 flex-col">
+				<div className="text-start flex gap-8 flex-col mt-6">
 					<span>{message1}</span>
 					<div className="max-w-full max-h-[40vh] overflow-hidden">
 						<img

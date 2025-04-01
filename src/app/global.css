@@ -13,66 +13,7 @@
 		@apply m-0 p-0 font-[Noto_Sans_JP] font-normal text-gray-800;
 	}
 
-	::selection {
-		@apply text-white;
-	}
-
-	h1,
-	h2,
-	h3,
-	h4,
-	h5,
-	h6 {
-		@apply font-bold text-gray-900;
-	}
-
 	a {
-		@apply text-blue-700 hover:text-blue-900 transition-colors;
-	}
-}
-
-@layer components {
-	.no-click {
-		@apply pointer-events-none select-none;
-	}
-
-	.section-root {
-		@apply relative z-[1];
-	}
-
-	.background-root {
-		@apply p-4 rounded-b-lg mb-48;
-	}
-
-	.white-background-root {
-		@apply p-4 rounded-b-lg my-48;
-	}
-
-	.school-btn {
-		@apply px-4 py-2 bg-blue-700 text-white rounded hover:bg-blue-800 transition-colors font-medium;
-	}
-
-	.school-card {
-		@apply bg-white rounded-lg shadow-md p-4 border border-gray-200 hover:shadow-lg transition-shadow;
-	}
-
-	.school-heading {
-		@apply border-l-4 border-blue-700 pl-3 font-bold text-blue-800;
-	}
-
-	.news-item {
-		@apply border-b border-gray-200 py-3 last:border-b-0;
-	}
-
-	.table-school {
-		@apply w-full border-collapse;
-	}
-
-	.table-school th {
-		@apply bg-blue-100 border border-gray-300 px-4 py-2 text-left;
-	}
-
-	.table-school td {
-		@apply border border-gray-300 px-4 py-2;
+		@apply text-school-blue hover:text-blue-900 transition-colors;
 	}
 }

@@ -6,9 +6,6 @@ const Schoollife: React.FC<AprilfoolPropsType> = ({ setIsAMOpen, setType }) => {
 	return (
 		<div className="bg-white/95 p-6 rounded-lg">
 			<div className="mb-6">
-				<h3 className="text-lg font-bold text-school-blue border-b-2 border-school-blue pb-2 mb-4">
-					学校生活
-				</h3>
 				<p className="text-sm mb-4">
 					蓮ノ空女学院での充実した学校生活についてご紹介します。本校では、勉学だけでなく部活動や学校行事を通じて豊かな人間性を育みます。
 				</p>

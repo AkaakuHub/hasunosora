@@ -6,9 +6,6 @@ const Exam: React.FC<AprilfoolPropsType> = ({ setIsAMOpen, setType }) => {
 	return (
 		<div className="bg-white/95 p-6 rounded-lg">
 			<div className="mb-6">
-				<h3 className="text-lg font-bold text-school-blue border-b-2 border-school-blue pb-2 mb-4">
-					入試情報
-				</h3>
 				<p className="text-sm mb-4">
 					令和6年度の入学試験に関する情報を掲載しています。出願期間や試験日程をご確認ください。
 				</p>

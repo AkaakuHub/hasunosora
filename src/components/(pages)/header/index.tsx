@@ -20,7 +20,7 @@ const Header: React.FC<AprilfoolPropsType> = ({ setIsAMOpen, setType }) => {
 				className="w-[60px] h-[60px] m-2.5 no-click lg:w-[80px] lg:h-[80px] md:w-[70px] md:h-[70px] sm:w-[70px] sm:h-[70px]"
 			/>
 			<div>
-				<h1 className="text-xl font-bold text-school-blue">蓮ノ空女学院</h1>
+				<h1 className="text-xl font-bold text-school-blue">私立蓮ノ空女学院</h1>
 				<p className="text-xs text-gray-600">Dream believers, I believe...</p>
 			</div>
 			<button

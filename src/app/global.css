@@ -9,10 +9,25 @@
 @layer base {
 	html,
 	body {
-		@apply m-0 p-0 font-[Noto_Sans_JP] font-normal text-gray-800;
+		@apply m-0 p-0 text-gray-800;
+		font-family: "Noto Sans JP", -apple-system, BlinkMacSystemFont,
+			"Hiragino Sans", "Hiragino Kaku Gothic ProN", "Yu Gothic", Meiryo,
+			sans-serif;
+		-webkit-font-smoothing: antialiased;
 	}
 
 	a {
 		@apply text-school-blue hover:text-blue-900 transition-colors;
+	}
+}
+
+/* 高解像度ディスプレイでの文字レンダリング調整 */
+/* biome-ignore lint/correctness/noUnknownMediaFeatureName: <explanation> */
+@media screen and (-webkit-min-device-pixel-ratio: 2),
+	screen and (min-resolution: 192dpi) {
+	html,
+	body {
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
 	}
 }

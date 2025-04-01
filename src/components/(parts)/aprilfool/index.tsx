@@ -66,7 +66,7 @@ const Aprilfool: React.FC<AprilfoolPropsType> = ({
 	};
 
 	const [message1, setMessage1] = useState<JSX.Element[]>([]);
-	const [modalImageURL, setModalImageURL] = useState("/special/normal.webp");
+	const [modalImageURL, setModalImageURL] = useState("/special/2024/normal.webp");
 
 	useEffect(() => {
 		setMessage1(
@@ -74,9 +74,9 @@ const Aprilfool: React.FC<AprilfoolPropsType> = ({
 		);
 
 		if (type === "sachi") {
-			setModalImageURL("/special/103withSachi.webp");
+			setModalImageURL("/special/2024/103withSachi.webp");
 		} else {
-			setModalImageURL("/special/normal.webp");
+			setModalImageURL("/special/2024/normal.webp");
 		}
 	}, [type]);
 

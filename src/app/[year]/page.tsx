@@ -12,7 +12,7 @@ import News from "../../components/(pages)/news";
 import Schoollife from "../../components/(pages)/schoollife";
 
 import Aprilfool from "../../components/(parts)/aprilfool";
-import Sachi from "../../components/(parts)/sachi";
+import Sachi from "../../components/(parts)/special";
 
 import type { AprilfoolTypeType } from "../../types/types";
 

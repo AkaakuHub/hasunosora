@@ -34,7 +34,7 @@ const Sachi: React.FC<AprilfoolPropsType> = ({ setIsAMOpen, setType }) => {
 	) => {
 		event.preventDefault();
 		setIsAMOpen(true);
-		setType("sachi");
+		setType("special");
 	};
 
 	const MAP = {

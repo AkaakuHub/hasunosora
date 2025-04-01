@@ -1,4 +1,4 @@
-export type AprilfoolTypeType = "normal" | "sachi";
+export type AprilfoolTypeType = "normal" | "special";
 
 export type AprilfoolPropsType = {
 	isAMOpen: boolean;

@@ -6,12 +6,15 @@ import type { AprilfoolPropsType } from "../../../types/types";
 import CloseIcon from "@mui/icons-material/Close";
 import TwitterIcon from "@mui/icons-material/Twitter";
 import XIcon from "@mui/icons-material/X";
+import { useYear } from "../../../hooks/useYear";
 
 const Aprilfool: React.FC<AprilfoolPropsType> = ({
 	isAMOpen,
 	setIsAMOpen,
 	type,
 }) => {
+	const { paramYear } = useYear();
+
 	const menuRef = useRef<HTMLDivElement>(null);
 	const handleClickOutside = (event: MouseEvent) => {
 		if (menuRef.current && !menuRef.current.contains(event.target as Node)) {
@@ -45,7 +48,7 @@ const Aprilfool: React.FC<AprilfoolPropsType> = ({
 			const hashtags = "蓮ノ空,エイプリルフール";
 			return `https://twitter.com/intent/tweet?text=${text}&url=${url}&hashtags=${hashtags}`;
 		}
-		if (type === "sachi") {
+		if (type === "special") {
 			const url = baseURL;
 			const text = "大切な思い出を発見しました";
 			const hashtags = "蓮ノ空,エイプリルフール";
@@ -57,7 +60,7 @@ const Aprilfool: React.FC<AprilfoolPropsType> = ({
 	const message1Dict: { [key: string]: string } = {
 		normal:
 			"このサイトは、蓮ノ空のこと好き好きクラブのとある一員がエイプリルフールに作ったものであり、公式とは一切関係ありません。",
-		sachi: `春は出会いと別れの季節、ってよく言うだろう?
+		special: `春は出会いと別れの季節、ってよく言うだろう?
 あれは少し正確じゃないんだ。
 順番が逆なんだよねぃ。別れがあって、出会いがある。
 別れにはつらい気持ちになることもあるけど･･････
@@ -66,19 +69,21 @@ const Aprilfool: React.FC<AprilfoolPropsType> = ({
 	};
 
 	const [message1, setMessage1] = useState<JSX.Element[]>([]);
-	const [modalImageURL, setModalImageURL] = useState("/special/2024/normal.webp");
+	const [modalImageURL, setModalImageURL] = useState(
+		`/special/${paramYear}/normal.webp`,
+	);
 
 	useEffect(() => {
 		setMessage1(
 			message1Dict[type].split("\n").map((line) => <p key={line}>{line}</p>),
 		);
 
-		if (type === "sachi") {
-			setModalImageURL("/special/2024/103withSachi.webp");
+		if (type === "special") {
+			setModalImageURL(`/special/${paramYear}/special.webp`);
 		} else {
-			setModalImageURL("/special/2024/normal.webp");
+			setModalImageURL(`/special/${paramYear}/normal.webp`);
 		}
-	}, [type]);
+	}, [type, paramYear]);
 
 	return (
 		<div
@@ -109,11 +114,11 @@ const Aprilfool: React.FC<AprilfoolPropsType> = ({
 				</button>
 				<div className="text-start flex gap-8 flex-col mt-6">
 					<span>{message1}</span>
-					<div className="max-w-full max-h-[40vh] overflow-hidden">
+					<div className="max-w-full max-h-[40vh] overflow-hidden flex items-center justify-center">
 						<img
 							src={modalImageURL}
 							alt={`${type}の画像`}
-							className="max-w-full max-h-full object-contain pointer-events-none select-none"
+							className="max-w-full max-h-[40vh] object-contain pointer-events-none select-none"
 						/>
 					</div>
 					<div className="mx-auto">

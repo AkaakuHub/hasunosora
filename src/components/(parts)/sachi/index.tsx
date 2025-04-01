@@ -1,16 +1,8 @@
 import type React from "react";
 import { useEffect, useRef, useState } from "react";
 import ImageMapper from "react-image-mapper";
-import "./index.css";
 
 import type { AprilfoolPropsType } from "../../../types/types";
-
-// const makeTweetContent = () => {
-// 	const url = "https://hasunosora.vercel.app";
-// 	const text = "蓮ノ空女学院 ホームページ";
-// 	const hashtags = "蓮ノ空,エイプリルフール";
-// 	return `https://twitter.com/intent/tweet?text=${text}&url=${url}&hashtags=${hashtags}`;
-// };
 
 const Sachi: React.FC<AprilfoolPropsType> = ({ setIsAMOpen, setType }) => {
 	const [windowWidth, setWindowWidth] = useState(0);
@@ -64,16 +56,19 @@ const Sachi: React.FC<AprilfoolPropsType> = ({ setIsAMOpen, setType }) => {
 	};
 
 	return (
-		<div className="sachi-root" ref={containerRef}>
+		<div
+			className="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-center overflow-hidden"
+			ref={containerRef}
+		>
 			<ImageMapper
 				src="/background/7.webp"
 				map={MAP}
 				width={getWidth()}
-				imgWidth={1920} // 元の画像の幅
+				imgWidth={1920}
 				onClick={handleClickImage}
 				responsive
 				parentWidth={windowWidth}
-				className="sachi-image"
+				className="relative z-0"
 			/>
 		</div>
 	);

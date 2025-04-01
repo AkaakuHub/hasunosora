@@ -1,44 +1,33 @@
-html,
-body {
-	margin: 0;
-	padding: 0;
-	font-family: "Noto Sans JP", sans-serif;
-	font-optical-sizing: auto;
-	font-weight: 400;
-	font-style: normal;
+@import "tailwindcss";
+@config "../../tailwind.config.mjs";
+
+@theme {
+	--color-school-pink: #fce8e6;
+	--color-school-blue: #1053a6;
 }
 
-.no-click {
-	pointer-events: none;
-	user-select: none;
-	-webkit-user-select: none;
-	-moz-user-select: none;
-	-ms-user-select: none;
-}
-.common-card-container {
-	/* flex */
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: center;
-	gap: 5em;
+@layer base {
+	html,
+	body {
+		@apply m-0 p-0 text-gray-800;
+		font-family: "Noto Sans JP", -apple-system, BlinkMacSystemFont,
+			"Hiragino Sans", "Hiragino Kaku Gothic ProN", "Yu Gothic", Meiryo,
+			sans-serif;
+		-webkit-font-smoothing: antialiased;
+	}
+
+	a {
+		@apply text-school-blue hover:text-blue-900 transition-colors;
+	}
 }
 
-.background-root,
-.white-background-root {
-	padding: 1em;
-	border-radius: 0 0 1em 1em;
-}
-
-.background-root {
-	margin: 0 0 12em 0;
-}
-
-.white-background-root {
-	margin: 12em 0 12em 0;
-	background: linear-gradient(
-		0deg,
-		rgba(255, 255, 255, 1) 0%,
-		rgba(255, 255, 255, 0.8) 80%,
-		rgba(255, 255, 255, 0) 100%
-	);
+/* 高解像度ディスプレイでの文字レンダリング調整 */
+/* biome-ignore lint/correctness/noUnknownMediaFeatureName: <explanation> */
+@media screen and (-webkit-min-device-pixel-ratio: 2),
+	screen and (min-resolution: 192dpi) {
+	html,
+	body {
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
+	}
 }

@@ -3,6 +3,8 @@ import type { Metadata } from "next";
 import { Yuji_Syuku } from "next/font/google";
 import type React from "react";
 
+import "./global.css";
+
 const yujiSyuku = Yuji_Syuku({
 	subsets: ["latin"],
 	display: "swap",

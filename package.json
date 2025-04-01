@@ -12,9 +12,6 @@
 		"lint": "pnpm biome format --write src"
 	},
 	"dependencies": {
-		"@emotion/react": "^11.14.0",
-		"@emotion/styled": "^11.14.0",
-		"@mui/icons-material": "^5.17.1",
 		"@next/third-parties": "^15.2.4",
 		"@tabler/icons-react": "^3.31.0",
 		"@tailwindcss/postcss": "^4.0.17",

@@ -3,9 +3,7 @@ import { useEffect, useRef, useState } from "react";
 
 import type { AprilfoolPropsType } from "../../../types/types";
 
-import CloseIcon from "@mui/icons-material/Close";
-import TwitterIcon from "@mui/icons-material/Twitter";
-import XIcon from "@mui/icons-material/X";
+import { IconBrandTwitter, IconBrandX, IconX } from "@tabler/icons-react";
 import { useYear } from "../../../hooks/useYear";
 
 const Aprilfool: React.FC<AprilfoolPropsType> = ({
@@ -130,7 +128,7 @@ const Aprilfool: React.FC<AprilfoolPropsType> = ({
 					className="absolute top-4 right-4 w-9 h-9 rounded-full flex items-center justify-center cursor-pointer hover:bg-gray-100"
 					onClick={() => setIsAMOpen(false)}
 				>
-					<CloseIcon fontSize="large" />
+					<IconX />
 				</button>
 				<div className="text-start flex gap-8 flex-col mt-6">
 					<span>{message1}</span>
@@ -158,7 +156,7 @@ const Aprilfool: React.FC<AprilfoolPropsType> = ({
 								onMouseLeave={handleMouseLeave}
 							>
 								<span className="align-middle">
-									{isHovering ? <TwitterIcon /> : <XIcon />}
+									{isHovering ? <IconBrandTwitter /> : <IconBrandX />}
 								</span>
 								でシェア
 							</button>

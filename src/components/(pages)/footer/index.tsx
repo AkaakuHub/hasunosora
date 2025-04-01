@@ -1,4 +1,4 @@
-import CloseIcon from "@mui/icons-material/Close";
+import { IconX } from "@tabler/icons-react";
 import React, { useState } from "react";
 
 const Footer = () => {
@@ -55,7 +55,7 @@ const Footer = () => {
 							className="absolute top-2.5 right-2.5 p-1 rounded-full hover:bg-gray-100 cursor-pointer"
 							onClick={toggleModal}
 						>
-							<CloseIcon fontSize="large" />
+							<IconX />
 						</button>
 						<p className="leading-relaxed mt-8 p-4">
 							本サイトでは、ユーザー体験の向上やサイトの最適化のため、Googleアナリティクスを使用しています。

@@ -140,7 +140,7 @@ const QuickLink: React.FC<{
 };
 
 export default function Home() {
-	const { paramYear, realYear } = useYear();
+	const { paramYear,  } = useYear();
 
 	const [isAMOpen, setIsAMOpen] = useState(false);
 	const [type, setType] = useState<AprilfoolTypeType>("normal");
@@ -202,7 +202,7 @@ export default function Home() {
 			<BackgroundImageComponent setIsLastImage={setIsLastImage} />
 			<Aprilfool {...AprilfoolProps} />
 
-			<Header {...AprilfoolProps} />
+			<Header />
 
 			<div className="container mx-auto px-4 relative z-10 mb-20">
 				<About />
